@@ -9,7 +9,15 @@ if (isset($noticias)) {
   $imagem = $noticias->getImagem();
   $txtDataNoticia = $noticias->getDataNoticia();
   $txtDescricaoNoticia = $noticias->getDescricao();
+  $selectStatus = $noticias->getStatus();
   
+  if ($selectStatus == 1) {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "";
+  }else {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "SELECTED";
+  }
 
   //Função do onclick para saber qual ação chama o router
   $router = "router('noticia', 'atualizar', '".$idNoticia."')";
@@ -51,6 +59,19 @@ if (isset($noticias)) {
     <div class="caixa_inputs_evento descricao_data_e_status">
       <label class="lblEventos">Imagem da notícia:</label><br>
       <input type="file" name="flefoto" id="flefoto" required value="Escolher arquivo">
+    </div>
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_status"> 
+        <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
+
+        <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
+
+        </select>
+      </div>
+    </div>
+    <div class="caixa_inputs_evento titulo_e_localidade">
     </div>
 
     <div class="area_botao_form">

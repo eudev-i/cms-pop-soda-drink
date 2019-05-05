@@ -423,21 +423,21 @@ if (isset($_GET['controller'])) {
 
       case 'INSERIR':
 
-      // Chamando o método de inserir um novo eventos
-      $controllerEventos->inserirEvento();
+        // Chamando o método de inserir um novo eventos
+        $controllerEventos->inserirEvento();
 
-      // Chamando a função que preenche a página com a lista de eventos
-      echo "<script>eventos();</script>";
+        // Chamando a função que preenche a página com a lista de eventos
+        echo "<script>eventos();</script>";
 
       break;
 
       case 'ATUALIZAR':
 
-      // Chamando o método de atualizar um registro
-      $controllerEventos->atualizarEvento();
+        // Chamando o método de atualizar um registro
+        $controllerEventos->atualizarEvento();
 
-      // Chamando a função que preenche a página com a lista de eventos
-      echo "<script>eventos();</script>";
+        // Chamando a função que preenche a página com a lista de eventos
+        echo "<script>eventos();</script>";
 
       break;
 

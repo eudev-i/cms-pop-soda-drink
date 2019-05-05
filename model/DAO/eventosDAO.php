@@ -48,7 +48,7 @@
     public function deleteEvento($idEvento){
 
       //script delete
-      $deleteSql = "DELETE FROM tbl_eventos WHERE id_eventos=".$idEvento ;
+      $deleteSql = "DELETE FROM tbl_eventos WHERE id_eventos=".$idEvento;
 
       //Recebendo a método que faz a conexão com o banco de dados
       $conn = $this->conexao->connectDatabase();
@@ -78,7 +78,7 @@
                     WHERE id_eventos=".$idEventos;
 
       $conn = $this->conexao->connectDatabase();
-
+      
       if(!$conn->query($updateSql)){
         echo "Erro no script de update";
       }
@@ -114,6 +114,7 @@
         $eventos[$cont]->setDescricao($rsEventos['descricao']);
         $eventos[$cont]->setLocalidade($rsEventos['localidade']);
         $eventos[$cont]->setDataEvento($rsEventos['dt_evento']);
+        $eventos[$cont]->setStatus($rsEventos['status']);
 
         //incrementando o cont
         $cont += 1;
@@ -151,6 +152,7 @@
         $eventos->setDescricao($rsEventos['descricao']);
         $eventos->setLocalidade($rsEventos['localidade']);
         $eventos->setDataEvento($rsEventos['dt_evento']);
+        $eventos->setStatus($rsEventos['status']);
       }
 
       //fechando a conexao com o banco de dados

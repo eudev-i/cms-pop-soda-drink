@@ -62,10 +62,10 @@ $path_url = $_SESSION['path_url'];
           <td><?= $rsEventos[$cont]->getLocalidade()?></td>
           <td><?= $rsEventos[$cont]->getDataEvento()?></td>
           <td id="td_imagens">
-            <a href="#" onclick="router('eventos', 'buscar', <?= $rsEventos[$cont]->getIdEventos() ?>);">
+            <a href="#" onclick="router('eventos', 'buscar', <?= $rsEventos[$cont]->getIdEventos()?>);">
               <img src="<?= "$path_url/cms/view/img/editar.png" ?>" alt="editar" title="Editar">
             </a>
-            <a href="#" onclick="router('eventos', 'excluir', <?= $rsEventos[$cont]->getIdEventos() ?>);">
+            <a href="#" onclick="router('eventos', 'excluir', <?= $rsEventos[$cont]->getIdEventos()?>);">
               <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
             </a>
           </td>
