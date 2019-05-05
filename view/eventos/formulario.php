@@ -9,7 +9,17 @@ if (isset($eventos)) {
   $txtDescricaoEvento = $eventos->getDescricao();
   $txtLocalidadeEvento = $eventos->getLocalidade();
   $txtDataEvento = $eventos->getDataEvento();
-  $status = $eventos->getStatus();
+  $selectStatus = $eventos->getStatus();
+
+
+  if ($selectStatus == 1) {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "";
+  }else {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "SELECTED";
+  }
+
 
   //Função do onclick para saber qual ação chama o router
   $router = "router('eventos', 'atualizar', '".$idEventos."')";
@@ -51,11 +61,18 @@ if (isset($eventos)) {
     <div class="caixa_inputs_evento descricao_data_e_status">
       <label class="lblEventos" for="txtDataEvento">Data:</label><br>
       <input class="inputEventos font-input largura_data" maxlength="10" type="text" id="txtDataEvento" name="txtDataEvento" value="<?= @$txtDataEvento?>"><br>
-      <label class="lblEventos">Status:</label><br>
-      <select name="select_status">
-        <option value="1" <?php if (@$status == 1) echo 'selected="selected"';?>>Ativado</option>
-        <option value="0" <?php if (@$status == 0) echo 'selected="selected"';?>>Desativado</option>
-      </select>
+      
+    </div>
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_status"> 
+        <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
+
+        <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
+
+        </select>
+      </div>
     </div>
     
 

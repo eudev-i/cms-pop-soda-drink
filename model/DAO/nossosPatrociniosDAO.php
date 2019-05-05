@@ -24,7 +24,7 @@
             $insertSql = "INSERT INTO
                             tbl_patrocinio (logo, nome, status)
                          VALUES
-                            ('".$patrocinios->getImagem()."','".$patrocinios->getNome()."', 1 )";
+                            ('".$patrocinios->getImagem()."','".$patrocinios->getNome()."', '".$patrocinios->getStatus()."')";
 
             $conn = $this->conexao->connectDatabase();
 
@@ -62,7 +62,8 @@
             if($patrocinios->getImagem() == null){
                 //script para atualizar um patrocinio
                 $updateSql = "UPDATE tbl_patrocinio
-                            SET nome = '".$patrocinios->getNome()."'     
+                            SET nome = '".$patrocinios->getNome()."',
+                            SET status = '".$patrocinios->getStatus()."'
                             WHERE id_patrocinio=".$idPatrocinios;
 
                 $conn = $this->conexao->connectDatabase();
@@ -80,7 +81,8 @@
                 //script para atualizar um patrocinio
                 $updateSql = "UPDATE tbl_patrocinio
                             SET logo = '".$patrocinios->getImagem()."',
-                                nome = '".$patrocinios->getNome()."'  
+                                nome = '".$patrocinios->getNome()."',
+                                status = '".$patrocinios->getStatus()."'  
                                      
                             WHERE id_patrocinio=".$idPatrocinios;
 
@@ -120,6 +122,7 @@
                 $patrocinios[$cont]->setIdPatrocinio($rsPatrocinios['id_patrocinio']);
                 $patrocinios[$cont]->setImagem($rsPatrocinios['logo']);
                 $patrocinios[$cont]->setNome($rsPatrocinios['nome']);
+                $patrocinios[$cont]->setStatus($rsPatrocinios)['status'];
 
                 $cont += 1;
             }
@@ -143,6 +146,7 @@
                 $patrocinio->setIdPatrocinio($rsPatrocinio['id_patrocinio']);
                 $patrocinio->setImagem($rsPatrocinio['logo']);
                 $patrocinio->setNome($rsPatrocinio['nome']);
+                $patrocinio->setStatus($rsPatrocinio['status']);
                 
 
             }
