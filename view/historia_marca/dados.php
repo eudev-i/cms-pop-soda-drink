@@ -25,7 +25,7 @@ $path_url = $_SESSION['path_url'];
     </form>
   </div>
 </div>
-<div id="registros_adm_cargor" class="centralizarX">
+<div id="registros_adm_historia" class="centralizarX">
   <table id="tabela">
     <thead>
       <tr>
@@ -38,7 +38,7 @@ $path_url = $_SESSION['path_url'];
       <?php
 
         // Importando a controller de historia_marca
-        require_once "$path_local/cms/controller/ControllerHistoriaMarca.php";
+        require_once "$path_local/cms/controller/controllerHistoriaMarca.php";
 
         // Instânciando a classe do controler
         $controllerHistoriaMarca = new ControllerHistoriaMarca();
