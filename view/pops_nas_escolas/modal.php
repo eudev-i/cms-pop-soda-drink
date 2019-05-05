@@ -60,7 +60,7 @@ $(document).ready(function(){
 <body>
 <!-- Modal -->
   <div class="modal-escola centralizarX">
-    <div class="head">
+    <div class="head-escola">
       <span>DETALHES</span>
       <a id="close" class="btn-close trigger" href="#">
         <i class="fa fa-times" aria-hidden="true"></i>

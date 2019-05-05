@@ -71,6 +71,8 @@ class PessoaJuridicaDAO{
       // Query de delete
       $sql = "DELETE FROM tbl_pessoa_juridica WHERE cnpj=".$cnpj;
 
+      echo $sql;
+
       // Recebendo a função que faz a conexão com BD
       $con = $this->conexao->connectDatabase();
 

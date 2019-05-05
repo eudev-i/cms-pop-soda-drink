@@ -239,6 +239,27 @@ if (isset($_GET['controller'])) {
       echo "<script>videos();</script>";
 
       break;
+
+      case 'EXCLUIR':
+
+      // Chamando o método de inserir um novo registro
+      $controllerVideo->excluirRegistro();
+
+      // Chamando a função que preenche a página com a lista de cargos
+      echo "<script>videos();</script>";
+
+      break;
+
+      case 'BUSCAR':
+
+      // Chamando o método de inserir um novo registro
+      $controllerVideo->buscarRegistro();
+
+      // Chamando a função que preenche a página com a lista de cargos
+      require_once "$path_local/cms/view/videos/formulario.php";
+
+      break;
+
     }
 
     break;
@@ -1074,20 +1095,16 @@ if (isset($_GET['controller'])) {
       // Verifica qual é o modo do controller de setor
       switch ($modo) {
 
-        case 'EXCLUIR':
-
-        // Chamando o método de excluir um registro
-        $controllerPessoaJuridica->excluirRegistro();
-
-        // Chamando a função que preenche a página com a lista de setores
-        echo "<script>adm_cms('pessoa_juridica');</script>";
-
-        break;
+        case 'STATUS':
+          echo "<script>console.log('OK');</script>";
+          $controllerPessoaJuridica->updateStatus();
+          echo "<script>adm_cms('pessoa_juridica');</script>";
+          break;
       }
 
       break;
 
-      case 'ANUNCIO':
+    case 'ANUNCIO':
 
     // Importando a classe Controller do Setor
     require_once "$path_local/cms/controller/controllerAnuncio.php";
