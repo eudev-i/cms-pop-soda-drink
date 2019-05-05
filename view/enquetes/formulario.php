@@ -74,8 +74,10 @@ if (isset($enquete)) {
         </div>
       </div>
 
+      <div id="label_opcoes">Opções da enquete:</div>
+
       <div id="form_enquete_2">
-        <label class="label_opcoes" for="txt_opcoes">Opções da enquete:</label> <br>
+
         <div class="input_opcoes">
           <input type="text" id="txt_opcao" name="txt_opcao1" value="<?= @$respostas[0] ?>"> <br>
           <input type="text" id="txt_opcao" name="txt_opcao2" value="<?= @$respostas[1] ?>">

@@ -62,9 +62,6 @@ $path_url = $_SESSION['path_url'];
             <a href="#" onclick="router('brinde', 'excluir', <?= $brinde->getId() ?>);">
               <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
             </a>
-            <a href="#">
-              <img src="<?= "$path_url/cms/view/img/ativado.png" ?>" alt="ativado" title="Ativado">
-            </a>
           </td>
         </tr>
       <?php } ?>
