@@ -85,16 +85,15 @@ $(document).ready(function(){
       </div>
     </div>
 
-    <div class="icones_status_anuncio">
-      <div  onclick="router_status('anuncio', 'status', <?= $id?>, <?= $status?>);">
-        <img style="width:140px; height:130px; float:left;" src="<?= "$path_url/cms/view/img/aprovar.jpg" ?>" alt="Aprovar" title="Aprovar">
-      </div>
+      <div class="icones_status_anuncio">
+        <div onclick="router_status('anuncio', 'status', <?= $id?>, <?= $status?>);">
+          <img style="width:70px; height:70px; margin-top:32px; margin-left: 50px; float:left;" src="<?= "$path_url/cms/view/img/icon_close.png" ?>" alt="Negar" title="Negar">
+        </div>
 
-
-      <div onclick="router_status('anuncio', 'status', <?= $id?>, <?= $status?>);">
-        <img style="width:70px; height:70px; margin-top:32px;" src="<?= "$path_url/cms/view/img/icon_close.png" ?>" alt="Negar" title="Negar">
+        <div  onclick="router_status('anuncio', 'status', <?= $id?>, <?= $status?>);">
+          <img style="width:140px; height:130px; margin-top:-95px; float:left;" src="<?= "$path_url/cms/view/img/aprovar.jpg" ?>" alt="Aprovar" title="Aprovar">
+        </div>
       </div>
-    </div>
     </div>
 </body>
 </html>

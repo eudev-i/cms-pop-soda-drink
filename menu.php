@@ -80,7 +80,7 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
   <div class="dropdown-container">
     <a style="margin-left:10px;"  href="<?= "$path_url/cms/view/pagina_fale_conosco.php"?>">Fale Conosco</a>
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_pops_nas_escolas.php" ?>">Pop's nas Escolas</a>
-    <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_comentario.php" ?>">Comentarios</a>
+
   </div>
 
   <button <?= @$modulo_dashboard ?> class="dropdown-btn">Dashboard
@@ -99,7 +99,7 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
   </button>
   <div class="dropdown-container">
     <!-- <a href="#">Usuário</a> -->
-    <a onclick="adm_funcionario();">Funcionário</a>
+    <a style="margin-left:10px;" onclick="adm_funcionario();">Funcionário</a>
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_nivel_perfil.php" ?>">Nível Perfil</a>
   </div>
 </div>

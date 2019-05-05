@@ -6,6 +6,7 @@ class Video
   private $id;
   private $titulo;
   private $arquivo;
+  private $status;
 
 
 
@@ -56,6 +57,21 @@ class Video
   {
 
     $this->arquivo = $arquivo;
+
+  }
+
+  // Métodos getters e setters da classe
+  public function getStatus()
+  {
+
+    return $this->status;
+
+  }
+
+  public function setStatus($status)
+  {
+
+    $this->status = $status;
 
   }
 

@@ -32,7 +32,8 @@
       if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $titulo = $_POST['txt_titulo'];
-        $arquivo = upload($_FILES['file_video']);
+        $arquivo = $_POST['file_video'];
+        $status = $_POST['select_status'];
 
         // Instânciando a classe Setor
         $video = new Video();
@@ -40,6 +41,7 @@
         // Guardando os dodos no objeto Setor
         $video->setTitulo($titulo);
         $video->setArquivo($arquivo);
+        $video->setStatus($status);
 
 
         // Insere o registro no BD
@@ -51,6 +53,19 @@
     public function listarRegistros(){
 
       return $this->videoDAO->selectAll();
+
+    }
+
+    public function excluirRegistro(){
+      $id = $_GET['id'];
+
+      $this->videoDAO->delete($id);
+    }
+
+    public function buscarRegistro(){
+      $id = $_GET['id'];
+
+      return $this->videoDAO->selectById($id);
 
     }
 
