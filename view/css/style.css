@@ -866,3 +866,10 @@ height: 148px;
     margin-right: auto;
     border-radius: 5px;
   }
+
+#label_opcoes{
+  font-family: arial;
+  font-weight: bold;
+  text-align: center;
+  width: 900px;
+}
