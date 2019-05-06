@@ -63,6 +63,7 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
     <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_videos.php" ?>">Videos</a>
 	  <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_planeta_sustentavel.php" ?>">Planeta Sustentável</a>
     <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_cor.php" ?>">Cores</a>
+    <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/crm.php" ?>">CRM</a>
   </div>
   <button <?= @$modulo_produto ?> class="dropdown-btn">Produto
     <i class="fas fa-angle-down fa-2px"></i>
