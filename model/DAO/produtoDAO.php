@@ -69,6 +69,7 @@ class ProdutoDAO
     $sodio = $produto->getSodio();
     $id_componente = $produto->getIdComponente();
     $status = $produto->getStatus();
+    $status_home = $produto->getStatusHome();
 
     // Query de insert
     $sql = "CALL sp_produto
@@ -101,7 +102,8 @@ class ProdutoDAO
       '$fibra_alimentar',
       '$sodio',
       '$id_componente',
-      '$status'
+      '$status',
+      '$status_home'
     )";
 
     // Recebendo a função que faz a conexão com BD
@@ -172,6 +174,7 @@ class ProdutoDAO
     $fibra_alimentar = $produto->getFibraAlimentar();
     $sodio = $produto->getSodio();
     $status = $produto->getStatus();
+    $produto->setStatusHome($_POST['select_status_home']);
 
     // Query de update
     $sql = "CALL sp_produto_update
