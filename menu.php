@@ -43,7 +43,7 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
 <div class="sidenav">
   <div class="menu centralizarY">
     <div class="foto_usuario centralizarX">
-      <!-- <img src="<?//= "$path_url/cms/view/img/usuario.png" ?>" alt="usuario"> -->
+    
     </div>
   </div>
   <a href="#" class="editar_perfil" id="editar">Editar perfil </a>
@@ -98,7 +98,6 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
     <i class="fas fa-angle-down fa-2px"></i>
   </button>
   <div class="dropdown-container">
-    <!-- <a href="#">Usuário</a> -->
     <a style="margin-left:10px;" onclick="adm_funcionario();">Funcionário</a>
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_nivel_perfil.php" ?>">Nível Perfil</a>
   </div>

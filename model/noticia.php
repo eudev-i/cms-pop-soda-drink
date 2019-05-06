@@ -8,6 +8,7 @@
         private $dataNoticia;
         private $descricao;
         private $status;
+        private $status_home;
 
 
         public function getIdNoticia(){
@@ -61,6 +62,14 @@
         
           public function setStatus($status){
             $this->status = $status;
+          }
+
+          public function getStatusHome(){
+            return $this->status_home;
+          }
+        
+          public function setStatusHome($status_home){
+            $this->status_home = $status_home;
           }
 
     }
