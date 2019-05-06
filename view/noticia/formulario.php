@@ -10,7 +10,16 @@ if (isset($noticias)) {
   $txtDataNoticia = $noticias->getDataNoticia();
   $txtDescricaoNoticia = $noticias->getDescricao();
   $selectStatus = $noticias->getStatus();
+  $selectStatusHome = $noticias->getStatusHome();
   
+  if ($selectStatusHome == 1) {
+    $selected_home = "SELECTED";
+    $selected_desativado_home = "";
+  }else {
+    $selected_home = "SELECTED";
+    $selected_desativado_home= "SELECTED";
+  }
+
   if ($selectStatus == 1) {
     $selected_ativado_status = "SELECTED";
     $selected_desativado_status = "";
@@ -67,6 +76,16 @@ if (isset($noticias)) {
         <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
 
         <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
+
+        </select>
+      </div>
+      <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status Home</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_status_home"> 
+          <option <?= @$selected_home ?> value="1"> Ativado </option>
+
+          <option value="0" <?= @$selected_desativado_home ?>> Desativado</option>
 
         </select>
       </div>
