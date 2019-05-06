@@ -49,15 +49,16 @@ if (isset($_GET["id"])) {
 </script>
 
 
-<div class="caixa_form_fisica centralizarX">
 
-  <div id="icon_fechar">
-    <a id="close">
-      <img src="img/icon_close.png" alt="icone não encontrado" title="fechar" id="img_icon_fechar">
+<div class="caixa_form_fisica centralizarX">
+  <div class="head-fale-conosco">
+    <span>INFORMAÇÕES</span>
+    <a id="close" class="btn-close trigger" href="#">
+      <i class="fa fa-times" aria-hidden="true"></i>
     </a>
   </div>
 
-  <form id="form" method="POST" enctype="multipart/form-data">
+  <div class="modal-conteudo-fale-conosco">
     <div class="clearfix" style="height:420px;">
       <div class="coluna_form_fisica">
         <label for="file_img">Nome</label>
@@ -93,5 +94,4 @@ if (isset($_GET["id"])) {
     <div class="area_botao_form">
 
     </div>
-  </form>
 </div>

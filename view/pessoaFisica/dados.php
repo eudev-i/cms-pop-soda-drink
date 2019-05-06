@@ -65,11 +65,6 @@ $path_url = $_SESSION['path_url'];
             <a class="visualizar_pessoaFisica" onclick="visualizar_pessoaFisica( <?= $rsPessoaFisica[$cont]->getId() ?>);">
               <img src="<?= "$path_url/cms/view/img/vizualizar.png" ?>" alt="Visualizar" title="Visualizar">
             </a>
-
-            <a href="#" onclick="router('pessoafisica', 'excluir', <?= $rsPessoaFisica[$cont]->getId() ?>);">
-              <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
-            </a>
-
           </td>
         </tr>
         <?php $cont++; } ?>

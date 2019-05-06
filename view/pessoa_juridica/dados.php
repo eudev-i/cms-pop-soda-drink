@@ -91,10 +91,6 @@ function consulta(id){
             <a class="consulta" onclick="consulta(<?= $rsUsuarios[$cont]->getCnpj()?>);">
               <img src="<?= "$path_url/cms/view/img/consulta.png" ?>" alt="consulta" title="consulta">
             </a>
-
-            <a href="#" onclick="status('pessoa_juridica', 'status', <?= $rsUsuarios[$cont]->getCnpj()?>);">
-              <img src="<?=($rsUsuarios[$cont]->getStatus() == 1) ? "$path_url/cms/view/img/ativado.png": "$path_url/cms/view/img/desativado.png"?>" alt="ativacao" title="Clique para Ativar/Desativar">
-            </a>
           </td>
         </tr>
         <?php $cont++; } ?>
