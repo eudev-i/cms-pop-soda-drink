@@ -60,7 +60,7 @@ $path_url = $_SESSION['path_url'];
           <td><?= $rsNoticias[$cont]->getTitulo()?></td>
           <td><?= $rsNoticias[$cont]->getDataNoticia()?></td>
           <td><?= $rsNoticias[$cont]->getDescricao()?></td>
-          <td>
+          <td align="center">
             <img class="img_size" width="70" height="70" src="<?= "$path_url/cms/view/img/temp/".$rsNoticias[$cont]->getImagem() ?>">
           </td>
           <td id="td_imagens">

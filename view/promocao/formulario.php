@@ -9,6 +9,7 @@ if (isset($promocoes)) {
   $txtDescricaoPromocao = $promocoes->getDescricao();
   $selectCadastroNecessario = $promocoes->getPrecisaCadastro();
   $selectStatus = $promocoes->getStatus();
+  $selectStatusHome = $promocoes->getStatusHome();
   $imagem = $promocoes->getImagem();
 
   if ($selectStatus == 1) {
@@ -25,6 +26,14 @@ if (isset($promocoes)) {
   }else {
     $selected_ativado = "SELECTED";
     $selected_desativado = "SELECTED";
+  }
+
+  if ($selectStatusHome) {
+    $selected_ativado_home = "SELECTED";
+    $selected_desativado_home = "";
+  }else {
+    $selected_ativado_home = "SELECTED";
+    $selected_desativado_home = "SELECTED";
   }
 
 
@@ -81,11 +90,23 @@ if (isset($promocoes)) {
       <div class="cadastro_necessario">
         <select name="select_status"> 
         <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
-
         <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
-
         </select>
       </div>
+    </div>
+
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status home</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_home"> 
+        <option <?= @$selected_ativado_home?> value="1"> Ativado </option>
+        <option <?= @$selected_desativado_home?> value="0"> Desativado</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      
     </div>
 
     <div class="caixa_inputs_evento titulo_e_localidade">
