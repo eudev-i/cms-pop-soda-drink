@@ -70,8 +70,8 @@ if (isset($componente)) {
 
           <label for="select_tipo">Tipo: </label> <br>
           <select class="select_tipo" name="select_tipo">
-            <option value="M"> Matéria Prima </option>
-            <option value="E"> Embalagem </option>
+            <option <?= (@$tipo == "M" ? "SELECTED" : "") ?> value="M"> Matéria Prima </option>
+            <option <?= (@$tipo == "E" ? "SELECTED" : "") ?> value="E"> Embalagem </option>
           </select>
 
           <label for="txt_qtd">Quantidade: </label> <br>

@@ -6,6 +6,15 @@ if (isset($patrocinios)) {
   // Pegando os dados do objeto e setando em variavéis locais
   $idPatrocinio = $patrocinios->getIdPatrocinio();
   $txtNomePatrocinio = $patrocinios->getNome();
+  $selectStatus = $patrocinios->getStatus();
+
+  if ($selectStatus == 1) {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "";
+  }else {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "SELECTED";
+  }
   
   //Função do onclick para saber qual ação chama o router
   $router = "router('nossosPatrocinios', 'atualizar', '".$idPatrocinio."')";
@@ -41,7 +50,20 @@ if (isset($patrocinios)) {
       <label class="lblEventos">Imagem do patrocínio:</label><br>
       <input type="file" name="flefoto" id="flefoto" required value="Escolher arquivo">
     </div>
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_status"> 
+        <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
 
+        <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
+
+        </select>
+      </div>
+    </div>
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      
+    </div>
     <div class="area_botao_form">
       <input type="button" id="btn_submit" value="<?= $botao ?>" onclick="<?= $router ?>">
       <input type="reset" value="Limpar">

@@ -7,9 +7,35 @@ if (isset($promocoes)) {
   $idPromocao = $promocoes->getIdPromocao();
   $txtTituloPromocao = $promocoes->getTitulo();
   $txtDescricaoPromocao = $promocoes->getDescricao();
-  $rdoCadastro = $promocoes->getPrecisaCadastro();
-  $rdoStatus = $promocoes->getStatus();
+  $selectCadastroNecessario = $promocoes->getPrecisaCadastro();
+  $selectStatus = $promocoes->getStatus();
+  $selectStatusHome = $promocoes->getStatusHome();
   $imagem = $promocoes->getImagem();
+
+  if ($selectStatus == 1) {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "";
+  }else {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "SELECTED";
+  }
+
+  if ($selectCadastroNecessario) {
+    $selected_ativado = "SELECTED";
+    $selected_desativado = "";
+  }else {
+    $selected_ativado = "SELECTED";
+    $selected_desativado = "SELECTED";
+  }
+
+  if ($selectStatusHome) {
+    $selected_ativado_home = "SELECTED";
+    $selected_desativado_home = "";
+  }else {
+    $selected_ativado_home = "SELECTED";
+    $selected_desativado_home = "SELECTED";
+  }
+
 
   //Função do onclick para saber qual ação chama o router
   $router = "router('promocao', 'atualizar', '".$idPromocao."')";
@@ -43,9 +69,11 @@ if (isset($promocoes)) {
     <div class="caixa_inputs_evento titulo_e_localidade">
       <label>Cadastro necessário?</label><br>
       <div class="cadastro_necessario">
-        <input class="radio" type="radio" name="rdoCadastro" value="1" <?php if (@$rdoCadastro == '1') {echo ' checked ';} ?>>Sim
+        <select name="select_cadastro"> 
+          <option <?= @$selected_ativado ?> value="1"> Sim </option>
 
-        <input class="radio" type="radio" name="rdoCadastro" value="0" <?php if (@$rdoCadastro == '0') {echo ' checked ';} ?>> Não
+          <option <?= @$selected_desativado ?> value="0"> Não </option>
+        </select>
       </div>
     </div>
     <div class="caixa_inputs_evento descricao_data_e_status">
@@ -60,10 +88,25 @@ if (isset($promocoes)) {
     <div class="caixa_inputs_evento titulo_e_localidade">
       <label>Status</label><br>
       <div class="cadastro_necessario">
-        <input class="radio" type="radio" name="rdoStatus" value="1" <?php if ($rdoStatus == '1') {echo ' checked ';} ?>>Ativar
-
-        <input class="radio" type="radio" name="rdoStatus" value="0" <?php if ($rdoStatus == '0') {echo ' checked ';} ?>>Desativar
+        <select name="select_status"> 
+        <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
+        <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
+        </select>
       </div>
+    </div>
+
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status home</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_home"> 
+        <option <?= @$selected_ativado_home?> value="1"> Ativado </option>
+        <option <?= @$selected_desativado_home?> value="0"> Desativado</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      
     </div>
 
     <div class="caixa_inputs_evento titulo_e_localidade">

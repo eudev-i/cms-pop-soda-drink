@@ -242,13 +242,9 @@ function form_conteudo_pagina_pops_escolas() {
 function videos() {
 
   $.ajax({
+
     type: "POST",
     url: `http://${host}/cms/view/videos/dados.php`,
-    data: new FormData($('#form')[0]),
-    cache: false,
-    contentType: false,
-    processData: false,
-    async: true,
     success: function (callback) {
 
       $("#caixa_informacoes").html(callback);
@@ -266,11 +262,6 @@ function form_video() {
 
     type: "POST",
     url: `http://${host}/cms/view/videos/formulario.php`,
-    data: new FormData($('#form')[0]),
-    cache: false,
-    contentType: false,
-    processData: false,
-    async: true,
     success: function (callback) {
 
       $("#caixa_informacoes").html(callback);

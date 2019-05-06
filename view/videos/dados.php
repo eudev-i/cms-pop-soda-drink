@@ -38,11 +38,11 @@ $path_url = $_SESSION['path_url'];
         <tbody>
           <?php
 
-          // Importando a controller de enquetes
-          require_once "$path_local/cms/controller/controllerVideos.php";
+          // Importando a controller de cargo
+          require_once "$path_local/cms/controller/ControllerVideos.php";
 
           // Instânciando a classe do controler
-          $controllerVideo = new ControllerVideo;
+          $controllerVideo = new ControllerVideo();
 
           // Result set que recebe os dados
           $rsVideos = $controllerVideo->listarRegistros();
@@ -52,18 +52,14 @@ $path_url = $_SESSION['path_url'];
 
           // Loop para colocar todos os registros no result set
           while ($cont < count($rsVideos)) {
-
-            ?>
+          ?>
             <tr>
               <td><?= $rsVideos[$cont]->getTitulo() ?></td>
-              <td>
-                <img class="img_size" width="70" height="70" src="<?= "$path_url/cms/view/img/temp/".$rsVideos[$cont]->getArquivo() ?>">
-              </td>
               <td id="td_imagens">
-                <a href="#" onclick="router('enquete', 'buscar', <?= $rsVideos[$cont]->getId() ?>);">
+                <a href="#" onclick="router('videos', 'buscar', <?= $rsVideos[$cont]->getId() ?>);">
                   <img src="<?= "$path_url/cms/view/img/editar.png" ?>" alt="editar" title="Editar">
                 </a>
-                <a href="#" onclick="router('enquete', 'excluir', <?= $rsVideos[$cont]->getId() ?>);">
+                <a href="#" onclick="router('videos', 'excluir', <?= $rsVideos[$cont]->getId() ?>);">
                   <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
                 </a>
               </td>

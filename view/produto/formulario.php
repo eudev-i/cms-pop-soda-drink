@@ -104,7 +104,7 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
         <select name="select_materia_prima">
           <?php  foreach ($rsMateriaPrima as $componente) {
 
-            if ($componente->getId() == $id_produto_componente)
+            if ($componente->getId() == $id_componente)
               $selected = "SELECTED";
             else
               $selected = "";
@@ -177,9 +177,9 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
 
         <label for="select_tipo">Tipo de Produto: </label> <br>
         <select class="select_tipo" name="select_tipo">
-          <option value="Suco"> Suco </option>
-          <option value="Aguá"> Aguá </option>
-          <option value="Refrigerante"> Refrigerante </option>
+          <option <?= (@$tipo_produto == "Suco" ? "SELECTED" : "") ?> value="Suco"> Suco </option>
+          <option <?= (@$tipo_produto == "Água" ? "SELECTED" : "") ?> value="Água"> Água </option>
+          <option <?= (@$tipo_produto == "Refrigerante" ? "SELECTED" : "") ?> value="Refrigerante"> Refrigerante </option>
         </select>
 
         <label for="select_status">Status: </label> <br>

@@ -59,7 +59,7 @@ $path_url = $_SESSION['path_url'];
         <tr>
           <td><?= $rsPromocoes[$cont]->getTitulo()?></td>
           <td><?= $rsPromocoes[$cont]->getDescricao()?></td>          
-          <td>
+          <td align="center">
             <img class="img_size" width="70" height="70" src="<?= "$path_url/cms/view/img/temp/".$rsPromocoes[$cont]->getImagem() ?>">
           </td>
           <td><?= $rsPromocoes[$cont]->getPrecisaCadastro()?></td>
@@ -70,7 +70,6 @@ $path_url = $_SESSION['path_url'];
             <a href="#" onclick="router('promocao', 'excluir', <?= $rsPromocoes[$cont]->getIdPromocao() ?>);">
               <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
             </a>
-
 
           </td>
         </tr>

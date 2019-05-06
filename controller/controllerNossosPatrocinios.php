@@ -25,11 +25,13 @@
 
                 $txtNomePatrocinio = $_POST['txtNomePatrocinio'];
                 $imagem = upload($_FILES['flefoto']);
+                $selectStatus = $_POST['select_status'];
 
                 $nossosPatrocinios = new NossosPatrocinios();
 
                 $nossosPatrocinios->setNome($txtNomePatrocinio);
                 $nossosPatrocinios->setImagem($imagem);
+                $nossosPatrocinios->setStatus($selectStatus);
 
                 $this->patrocinioDAO->insertPatrocinio($nossosPatrocinios);
             }
@@ -50,11 +52,13 @@
 
                 $txtNomePatrocinio = $_POST['txtNomePatrocinio'];
                 $imagem = upload($_FILES['flefoto']);
+                $selectStatus = $_POST['select_status'];
 
                 $nossosPatrocinios = new NossosPatrocinios();
 
                 $nossosPatrocinios->setNome($txtNomePatrocinio);
                 $nossosPatrocinios->setImagem($imagem);
+                $nossosPatrocinios->setStatus($selectStatus);
 
                 $this->patrocinioDAO->updatePatrocinio($nossosPatrocinios, $idPatrocinio);
             }

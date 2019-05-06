@@ -28,7 +28,7 @@ class VideoDAO
   {
 
     // Query de insert
-    $sql = "INSERT INTO tbl_video(titulo, caminho, status)  VALUES('".$video->getTitulo()."', '".$video->getArquivo()."', 1)";
+    $sql = "INSERT INTO tbl_video(titulo, caminho, status)  VALUES('".$video->getTitulo()."', '".$video->getArquivo()."', '".$video->getStatus()."')";
 
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
@@ -47,7 +47,7 @@ class VideoDAO
   {
 
     // Query de select
-    $sql = "SELECT * FROM tbl_video WHERE status = 1";
+    $sql = "SELECT * FROM tbl_video";
 
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
@@ -72,6 +72,69 @@ class VideoDAO
       $cont += 1;
 
     }
+
+    // Fechando a conexão com BD
+    $this->conexao->closeDatabase();
+
+    // Retorna o array
+    return $videos;
+
+  }
+
+  // Função deleta um registro no banco
+  public function delete($id)
+  {
+
+    // Query de delete
+    $sql = "DELETE FROM tbl_video WHERE id_video=".$id;
+
+    // Recebendo a função que faz a conexão com BD
+    $con = $this->conexao->connectDatabase();
+
+    // Executa o script no BD
+    if (!$con->query($sql))
+    echo 'Erro no script de delete';
+
+    // Fechando a conexão com BD
+    $this->conexao->closeDatabase();
+
+  }
+
+  // Função busca um registro no banco atráve do id
+  public function selectById($id)
+  {
+
+    // Query de select + id
+    $sql = "SELECT * FROM tbl_video WHERE id_video =".$id;
+
+
+
+    // Recebendo a função que faz a conexão com BD
+    $con = $this->conexao->connectDatabase();
+
+    // Executando o select
+    $select = $con->query($sql);
+
+    // Verifica se o result set recebeu o registro
+    if ($rsVideos = $select->fetch(PDO::FETCH_ASSOC)) {
+
+      // Instância da classe Setor
+      $video = new Video();
+
+      // Setando os valores do objeto
+      $video->setId($rsVideos['id_video']);
+      $video->setTitulo($rsVideos['titulo']);
+      $video->setArquivo($rsVideos['caminho']);
+      $video->setStatus($rsVideos['status']);
+
+    }
+
+    // Fechando a conexão com BD
+    $this->conexao->closeDatabase();
+
+    // Retornando o objeto
+    return $video;
+
   }
 }
 

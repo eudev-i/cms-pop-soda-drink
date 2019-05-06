@@ -62,5 +62,16 @@ class ControllerPessoaJurica{
 
   }
 
+  public function updateStatus(){
+      $cnpj = $_GET['id'];
+      $idElement = $_GET['status'];
+
+      echo "<script>console.log('Ok 2 mano');</script>";
+      echo "<script>console.log($cnpj);</script>";
+      echo "<script>console.log($idElement);</script>";
+
+      $this->pessoaJuridicaDAO->updateStatus($cnpj, $idElement);
+
+  }
 }
  ?>

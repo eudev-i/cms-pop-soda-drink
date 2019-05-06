@@ -65,9 +65,6 @@ $path_url = $_SESSION['path_url'];
             <a href="#" onclick="router('sustentavel', 'excluir', <?= $rsSustentavel[$cont]->getId() ?>);">
               <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
             </a>
-            <a href="#" onclick="form_fale_conosco();">
-              <img src="<?= "$path_url/cms/view/img/ativado.png" ?>" alt="ativado" title="Ativado">
-            </a>
           </td>
         </tr>
         <?php $cont++; } ?>
