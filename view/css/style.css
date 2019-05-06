@@ -116,6 +116,19 @@ height: 100px;
 
 }
 
+.caixa_form_fale_conosco{
+  width: 640px;
+  height: 700px;
+  background-color: white;
+
+}
+
+.caixa_form_fisica{
+  width: 640px;
+  height: 800px;
+  background-color: white;
+}
+
 .editar_perfil{
   margin-top: 15px;
 
@@ -665,6 +678,10 @@ height: 148px;
 
 }
 
+.modal-conteudo-fale-conosco{
+  padding: 10px;
+}
+
 .head-comentario {
   width: 85%;
   height: 32px;
@@ -672,7 +689,14 @@ height: 148px;
   overflow: hidden;
   background: #e2525c;
 }
+.head-fale-conosco{
+  width: 90.7%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #e2525c;
 
+}
 .head-anuncio{
   width: 89%;
   height: 32px;
@@ -714,6 +738,12 @@ height: 148px;
 }
 
 .head-comentario span{
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.head-fale-conosco span{
   font-size: 25px;
   color: white;
   font-family: sans-serif;

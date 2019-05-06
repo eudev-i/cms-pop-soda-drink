@@ -34,24 +34,26 @@ if (isset($_GET["id"])) {
 }
 
 ?>
-
 <script>
-  $(document).ready(function(){
-    //function para fechar a modal
-    $('#icon_fechar').click(function(){
-      $('#container').fadeOut(400);
-    });
+$(document).ready(function(){
+  //function para fechar a modal
+
+  $('#close').click(function(){
+    $('#container').fadeOut(400);
   });
+});
 </script>
 
 <div class="caixa_form_fale_conosco centralizarX">
-  <div id="icon_fechar">
-    <a id="#close">
-      <img src="img/icon_close.png" alt="icone não encontrado" title="fechar" id="img_icon_fechar">
+
+  <div class="head-fale-conosco">
+    <span>FALE CONOSCO</span>
+    <a id="close" class="btn-close trigger" href="#">
+      <i class="fa fa-times" aria-hidden="true"></i>
     </a>
   </div>
 
-  <form id="form" method="POST" action="index.php">
+  <div class="modal-conteudo-fale-conosco">
     <label for="txt_cargo">Nome</label>
     <input type="text" id="txt_nome" name="txt_nome" value="<?= @$nome ?>">
     <label for="txt_cargo">Email</label>
@@ -66,6 +68,5 @@ if (isset($_GET["id"])) {
 
     <label for="txt_cargo">Mensagem</label>
     <textarea rows="4" cols="50" name="txt_cargo"><?=@$descricao?></textarea>
-
-  </form>
+  </div>
 </div>
