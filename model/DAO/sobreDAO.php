@@ -76,10 +76,7 @@ class SobreDAO
   public function selectAll()
   {
     // Query de select
-    $sql = "SELECT pf., e.
-            FROM tbl_pessoa_fisica AS pf
-            INNER JOIN tbl_p_fisica_endereco AS pfe ON pfe.id_p_fisica = pfe.id_p_fisica
-            INNER JOIN tbl_endereco AS e ON pfe.id_endereco = e.id_endereco WHERE pf.id_p_fisica = $id";
+    $sql = "SELECT * FROM tbl_quem_somos";
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
     // Executando o select
@@ -96,7 +93,8 @@ class SobreDAO
       $sobre[$cont]->setDescricao($rsSobre['descricao']);
       $sobre[$cont]->setStatus($rsSobre['status']);
       $sobre[$cont]->setImagem($rsSobre['imagem']);
-      $cont += 1;
+
+      $cont ++;
     }
     // Fechando a conexão com BD
     $this->conexao->closeDatabase();

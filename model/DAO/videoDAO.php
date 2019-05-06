@@ -42,6 +42,26 @@ class VideoDAO
 
   }
 
+  // Função atualiza um registro no banco
+  public function update(Video $video, $id)
+  {
+    // Query de update
+    $sql = "UPDATE tbl_video
+            SET titulo ='".$video->getTitulo()."',
+                caminho ='".$video->getArquivo()."',
+                status ='".$video->getStatus()."'
+            WHERE id_video=".$id;
+
+    // Recebendo a função que faz a conexão com BD
+    $con = $this->conexao->connectDatabase();
+
+    if (!$con->query($sql))
+    echo 'Erro no script de update';
+    
+    // Fechando a conexão com BD
+    $this->conexao->closeDatabase();
+  }
+
   // Função lista todos os registros do banco
   public function selectAll()
   {

@@ -53,15 +53,23 @@ class ControllerSobre
   }
   public function atualizarRegistro()
   {
-    
+
     $id = $_GET['id'];
     // Verifica qual método está sendo requisitado do formulário (POST ou GET)
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+
+
       $tituloSobre = $_POST['txt_titulo'];
       $descricao = $_POST['txt_descricao'];
       $status = $_POST['select_status'];
+      
+      $imagemBanco = $_SESSION['imagem'];
+
       $imagem = upload($_FILES['file_img']);
-      echo($tituloSobre);
+
+      if ($imagem == "")
+        $imagem = $imagemBanco;
       // Instânciando a classe Setor
       $sobre = new Sobre();
       // Guardando os dodos no objeto Setor
