@@ -1,17 +1,12 @@
 <?php
-
 // Iniciando uma sessão
 @session_start();
-
 // Iniciando a variável em null para não haver erro
 $path_local = null;
-
 // Variável que recebe a variáveil de sessão
 $path_local = $_SESSION['path_local'];
-
 // Verificando se o objeto existe
 if (isset($produto)) {
-
   // Pegando os dados do objeto e setando em variavéis locais
   $id = $produto->getId();
   $id_componente = $produto->getIdComponente();
@@ -45,12 +40,9 @@ if (isset($produto)) {
   $fibra_alimentar = $produto->getFibraAlimentar();
   $sodio = $produto->getSodio();
   $status = $produto->getStatus();
-  $status_home = $produto->getStatusHome();
-
   $_SESSION['id_nutricional'] = $id_nutricional;
   $_SESSION['id_produto_componente'] = $id_produto_componente;
   $_SESSION['imagem'] = $imagem;
-
   if ($status == 1) {
     $selected_ativado = "SELECTED";
     $selected_desativado = "";
@@ -58,45 +50,25 @@ if (isset($produto)) {
     $selected_ativado = "SELECTED";
     $selected_desativado = "SELECTED";
   }
-
-  if ($status_home == 1) {
-    $selected_home = "SELECTED";
-    $selected_home = "";
-  }else {
-    $selected_home = "SELECTED";
-    $selected_home = "SELECTED";
-  }
-
-
   //Função do onclick para saber qual ação chama o router
   $router = "router('produto', 'atualizar', '$id')";
-
   // Muda o texto do botão e título
   $botao = "Atualizar";
   $titulo = "ATUALIZAR PRODUTO";
-
 }else {
-
   //Função do onclick para saber qual ação chama o router
   $router = "router('produto', 'inserir', 0)";
-
   // Muda o texto do botão e título
   $botao = "Salvar";
   $titulo = "CADASTRAR PRODUTO";
-
 }
-
 // Importando a controller do objeto
 require_once "$path_local/cms/controller/controllerComponente.php";
-
 // Instânciando a controller
 $controllerComponente = new ControllerComponente();
-
 // Chamando o método que lista os registros e colocando em um result set
 $rsMateriaPrima = $controllerComponente->listarMateriaPrima();
-
 $rsEmbalagem = $controllerComponente->listarEmbalagem();
-
 ?>
 
 <div class="title_paginas centralizarX">
@@ -112,12 +84,10 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
         <label for="select_materia_prima">Matéria Prima: </label> <br>
         <select name="select_materia_prima">
           <?php  foreach ($rsMateriaPrima as $componente) {
-
             if ($componente->getId() == $id_componente)
               $selected = "SELECTED";
             else
               $selected = "";
-
           ?>
           <option <?= $selected ?> value="<?= $componente->getId() ?>"><?= $componente->getNome() ?></option>
         <?php } ?>
@@ -195,12 +165,6 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
         <select class="select_status" name="select_status">
           <option <?= @$selected_ativado ?> value="1"> Ativado </option>
           <option <?= @$selected_desativado ?> value="0"> Desativado </option>
-        </select>
-
-        <label for="select_status_home">Status Home: </label> <br>
-        <select class="select_status" name="select_status_home">
-          <option  value="1" <?= @$selected_home ?>> Ativado </option> 
-          <option  value="0" <?= @$selected_home ?>> Desativado </option>
         </select>
 
         <label for="txt_gordura_totais">Gordura Totais: </label> <br>
