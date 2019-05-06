@@ -240,6 +240,16 @@ if (isset($_GET['controller'])) {
 
       break;
 
+      case 'ATUALIZAR':
+
+      // Chamando o método de inserir um novo registro
+      $controllerVideo->atualizarRegistro();
+
+      // Chamando a função que preenche a página com a lista de cargos
+      echo "<script>videos();</script>";
+
+      break;
+
       case 'EXCLUIR':
 
       // Chamando o método de inserir um novo registro
@@ -253,7 +263,7 @@ if (isset($_GET['controller'])) {
       case 'BUSCAR':
 
       // Chamando o método de inserir um novo registro
-      $controllerVideo->buscarRegistro();
+      $video = $controllerVideo->buscarRegistro();
 
       // Chamando a função que preenche a página com a lista de cargos
       require_once "$path_local/cms/view/videos/formulario.php";
