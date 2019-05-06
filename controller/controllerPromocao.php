@@ -42,6 +42,7 @@
                 $txtDescricaoPromocao = $_POST['txtDescricaoPromocao'];
                 $selectCadastroNecessario = $_POST['select_cadastro'];
                 $selectStatus = $_POST['select_status'];
+                $selectStatusHome = $_POST['select_home'];
                 //var_dump($_FILES['flefoto']);
                 $imagem = upload($_FILES['flefoto']);
 
@@ -53,7 +54,8 @@
                 $promocoes->setDescricao($txtDescricaoPromocao);
                 $promocoes->setImagem($imagem);
                 $promocoes->setPrecisaCadastro($selectCadastroNecessario);
-                $promocoes->setStatus($selectStatus);                
+                $promocoes->setStatus($selectStatus);               
+                $promocoes->setStatusHome($selectStatusHome); 
 
                 //Chamando o método de inserir no banco
                 $this->promocaoDAO->insertPromocao($promocoes);
@@ -85,6 +87,7 @@
                 $txtDescricaoPromocao = $_POST['txtDescricaoPromocao'];
                 $selectCadastroNecessario = $_POST['select_cadastro'];
                 $selectStatus = $_POST['select_status'];
+                $selectStatusHome = $_POST['select_home'];
                 //var_dump($_FILES['flefoto']);
                 $imagem = upload($_FILES['flefoto']);
 
@@ -96,6 +99,7 @@
                 $promocoes->setDescricao($txtDescricaoPromocao);
                 $promocoes->setPrecisaCadastro($selectCadastroNecessario);
                 $promocoes->setStatus($selectStatus);
+                $promocoes->setStatusHome($selectStatusHome);
                 $promocoes->setImagem($imagem);
                 
 

@@ -22,7 +22,7 @@
             $insertSql = "INSERT INTO
                             tbl_noticia (titulo, imagem, dt_noticia, descricao, status)
                          VALUES
-                            ('".$noticias->getTitulo()."', '".$noticias->getImagem()."', '".$noticias->getDataNoticia()."', '".$noticias->getDescricao()."', '".$noticia->getStatus()."' )";
+                            ('".$noticias->getTitulo()."', '".$noticias->getImagem()."', '".$noticias->getDataNoticia()."', '".$noticias->getDescricao()."', '".$noticias->getStatus()."')";
 
             $conn = $this->conexao->connectDatabase();
 
