@@ -43,8 +43,8 @@ if (isset($sobre)) {
     <textarea name="txt_descricao" rows="4" required><?= @$descricao ?></textarea>
     <label for="select_status">Status</label>
     <select name="select_status">
-      <option <?= ($status == 1 ? "SELECTED" : "") ?> value="1">Ativado</option>
-      <option <?= ($status == 0 ? "SELECTED" : "") ?> value="0">Desativado</option>
+      <option <?= (@$status == 1 ? "SELECTED" : "") ?> value="1">Ativado</option>
+      <option <?= (@$status == 0 ? "SELECTED" : "") ?> value="0">Desativado</option>
     </select>
       <div class="area_botao_form">
         <input type="button" id="btn_submit" value="<?= $botao ?>" onclick="<?= $router ?>;">

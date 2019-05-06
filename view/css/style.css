@@ -498,7 +498,7 @@ height: 148px;
   width: 900px;
 }
 
-#registros_enquete, #registros_adm_historia, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos{
+#registros_enquete, #registros_adm_historia, #registros_pops_escolas, #registros_adm_fale_conosco{
     width: 700px;
 }
 
@@ -880,6 +880,7 @@ height: 148px;
 
 .caixa_form_eventos{
   width: 700px;
+  height: 500px;
   padding: 20px;
   margin-top: 90px;
   border-radius: 10px;
@@ -932,8 +933,6 @@ height: 148px;
 .img_size{
   width: 100px;
   height: 100px;
-  float: right;
-  margin-right: 30%;
 }
 
 #registros_adm_sustentavel #tabela #descricao{
@@ -951,5 +950,18 @@ height: 148px;
 }
 
 #txt_descricao_produto{
-  height: 202px;
+  height: 118px;
+}
+
+#label_opcoes{
+  width: 100%;
+  font-weight: bold;
+  font-family: arial;
+  text-align: center;
+}
+
+.color_sample{
+  width: 28px;
+  height: 28px;
+  border-radius: 15px;
 }

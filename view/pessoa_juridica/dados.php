@@ -21,28 +21,25 @@ $(document).ready(function(){
   // });
 });
 
-function consulta(id){
-  $.ajax({
-    type: "GET",
-    url: "<?= "$path_url/cms/view/pessoa_juridica/modal.php?id="?>"+id,
-    success: function(dados){
-      $(".modal").html(dados)
-    }
-  });
-
-  $('#container').fadeIn(600);
-}
+// function consulta(id){
+//   $.ajax({
+//     type: "GET",
+//     url: "<?= "$path_url/cms/view/pessoa_juridica/modal.php?id="?>"+id,
+//     success: function(dados){
+//       $(".modal").html(dados)
+//     }
+//   });
+//
+//   $('#container').fadeIn(600);
+// }
 
 </script>
 
-
-<div class="modal-teste">
-
-  <div id="container">
+  <!-- <div id="container">
     <div class="modal">
 
     </div>
-  </div>
+  </div> -->
 <div class="title_paginas centralizarX">
    ADM. PESSOA JURIDICA
 </div>
@@ -96,5 +93,4 @@ function consulta(id){
         <?php $cont++; } ?>
         <tbody>
   </table>
-</div>
 </div>
