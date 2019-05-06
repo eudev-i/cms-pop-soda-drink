@@ -63,19 +63,6 @@ $path_url = $_SESSION['path_url'];
           <a href="#" onclick="router('historia_marca', 'excluir', <?= $rsHistoria[$cont]->getId() ?>);">
             <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
           </a>
-          <a href="#" onclick="">
-            <?php
-              if($rsHistoria[$cont]->getStatus() == 0){
-            ?>
-              <img src="<?= "$path_url/cms/view/img/ativado.png" ?>" alt="ativado" title="Ativado">
-            <?php
-          }else if($rsHistoria[$cont]->getStatus() == 1){
-            ?>
-                <img src="<?= "$path_url/cms/view/img/desativado.png" ?>" alt="desativado" title="Desativado">
-
-            <?php } ?>
-
-          </a>
         </td>
       </tr>
       <?php
