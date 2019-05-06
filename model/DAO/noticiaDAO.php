@@ -20,9 +20,10 @@
 
             //sql para inserir no banco
             $insertSql = "INSERT INTO
-                            tbl_noticia (titulo, imagem, dt_noticia, descricao, status)
+                            tbl_noticia (titulo, imagem, dt_noticia, descricao, status, status_home)
                          VALUES
-                            ('".$noticias->getTitulo()."', '".$noticias->getImagem()."', '".$noticias->getDataNoticia()."', '".$noticias->getDescricao()."', '".$noticias->getStatus()."')";
+                            ('".$noticias->getTitulo()."', '".$noticias->getImagem()."', '".$noticias->getDataNoticia()."', '".$noticias->getDescricao()."',
+                             '".$noticias->getStatus()."', '".$noticias->getStatusHome()."')";
 
             $conn = $this->conexao->connectDatabase();
 
@@ -63,7 +64,8 @@
                             SET titulo = '".$noticias->getTitulo()."',
                             dt_noticia = '".$noticias->getDataNoticia()."',
                             descricao = '".$noticias->getDescricao()."',
-                            status = '".$noticias->getStatus()."'
+                            status = '".$noticias->getStatus()."',
+                            status_home = '".$noticias->getStatusHome()."'
                             WHERE id_noticia=".$idNoticias;
 
                 $conn = $this->conexao->connectDatabase();
@@ -84,7 +86,8 @@
                             imagem = '".$noticias->getImagem()."',
                             dt_noticia = '".$noticias->getDataNoticia()."',
                             descricao = '".$noticias->getDescricao()."',
-                            status = '".$noticias->getStatus()."'
+                            status = '".$noticias->getStatus()."',
+                            status_home = '".$noticias->getStatusHome()."'
                             WHERE id_noticia=".$idNoticias;
 
                 $conn = $this->conexao->connectDatabase();
@@ -157,6 +160,7 @@
               $noticia->setDataNoticia($rsNoticia['dt_noticia']);
               $noticia->setDescricao($rsNoticia['descricao']);
               $noticia->setStatus($rsNoticia['status']);
+              $noticia->setStatusHome($rsNoticia['status_home']);
 
           }
           //Fechar a conexão com o BD
