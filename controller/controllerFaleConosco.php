@@ -33,7 +33,7 @@ class ControllerFaleConosco
     require_once "$path_local/cms/model/fale_conosco.php";
 
     // Importando a classe SetorDAO
-    require_once "$path_local/cms/model/DAO/FaleConoscoDAO.php";
+    require_once "$path_local/cms/model/DAO/faleConoscoDAO.php";
 
     // Instânciando a classe SetorDAO
     $this->faleConoscoDAO = new FaleConoscoDAO();

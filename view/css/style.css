@@ -24,6 +24,7 @@
   margin-top: 30px;
   margin-left: 530px;
   border-radius: 5px;
+  background-color: #fff;
   }
 
   #icon_fechar{
@@ -453,7 +454,7 @@ height: 148px;
 }
 
 /* ADM. SETOR */
-#registros_adm_setor, #registros_adm_cargor, #registros_enquete, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos, #registros_adm_sustentavel{
+#registros_adm_setor, #registros_adm_historia, #registros_adm_cargor, #registros_enquete, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos, #registros_adm_sustentavel{
   margin-top: 50px;
   width: 400px;
   max-height: 350px;
@@ -464,7 +465,7 @@ height: 148px;
   width: 900px;
 }
 
-#registros_enquete, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos{
+#registros_enquete, #registros_adm_historia, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos{
     width: 700px;
 }
 

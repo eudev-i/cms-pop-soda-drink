@@ -12,7 +12,7 @@ $path_local = $_SESSION['path_local'];
 if (isset($_GET["id"])) {
 
   // Importando a controller de setor
-  require_once "$path_local/cms/controller/ControllerFaleConosco.php";
+  require_once "$path_local/cms/controller/controllerFaleConosco.php";
 
   // Instânciando a classe do controler
   $controllerFaleConosco = new ControllerFaleConosco();
@@ -34,6 +34,15 @@ if (isset($_GET["id"])) {
 }
 
 ?>
+
+<script>
+  $(document).ready(function(){
+    //function para fechar a modal
+    $('#icon_fechar').click(function(){
+      $('#container').fadeOut(400);
+    });
+  });
+</script>
 
 <div class="caixa_form_fale_conosco centralizarX">
   <div id="icon_fechar">

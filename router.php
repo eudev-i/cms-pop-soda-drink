@@ -267,7 +267,7 @@ if (isset($_GET['controller'])) {
     case 'FALECONOSCO':
 
     // Importando a classe Controller do Cargo
-    require_once "$path_local/cms/controller/ControllerFaleConosco.php";
+    require_once "$path_local/cms/controller/controllerFaleConosco.php";
 
     // Instância da Controller do Setor
     $controllerFaleConosco = new ControllerFaleConosco();
@@ -303,7 +303,7 @@ if (isset($_GET['controller'])) {
     case 'HISTORIA_MARCA':
 
     // Importando a classe Controller do Cargo
-    require_once "$path_local/cms/controller/ControllerHistoriaMarca.php";
+    require_once "$path_local/cms/controller/controllerHistoriaMarca.php";
 
     // Instância da Controller do Setor
     $controllerHistoriaMarca = new ControllerHistoriaMarca();
@@ -358,7 +358,7 @@ if (isset($_GET['controller'])) {
     case 'SOBRE':
 
     // Importando a classe Controller do Cargo
-    require_once "$path_local/cms/controller/sobre.php";
+    require_once "$path_local/cms/controller/controllerSobre.php";
 
     // Instância da Controller do Setor
     $controllerSobre = new ControllerSobre();

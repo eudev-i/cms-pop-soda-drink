@@ -39,7 +39,7 @@ $path_url = $_SESSION['path_url'];
       <?php
 
       // Importando a controller de cargo
-      require_once "$path_local/cms/controller/ControllerFaleConosco.php";
+      require_once "$path_local/cms/controller/controllerFaleConosco.php";
 
       // Instânciando a classe do controler
       $controllerFaleConosco = new ControllerFaleConosco();
