@@ -63,37 +63,6 @@ $rsUser = verificarAutentica();
           </div>
         </div>
       </div>
-
-      <!-- <section class="area_informacoes">
-        <div class="user_info">
-           <span class="caixa_informacoes_user">
-             <i class="fas fa-user fa-4x"></i>
-           </span>
-        </div>
-
-        <div class="user_info">
-
-        </div>
-
-        <div class="user_info">
-          <i class="fas fa-envelope fa-4x"></i>
-        </div>
-
-        <div class="user_info">
-
-        </div>
-      </section> -->
-
-      <!-- <h1>PAINEL PRINCIPAL</h1>
-      <div class="area_saudacao centralizarY">
-        <h1 class="centralizarX">Bem-vindo ao CMS</h1>
-      </div>
-
-      <div class="area_informacoes">
-        <div class="usuario_informacoes">Usuário:></div>
-        <div class="usuario_informacoes">Perfil: </div>
-        <div class="usuario_informacoes">Email: </div>
-      </div> -->
     </div>
   </div>
 </body>
