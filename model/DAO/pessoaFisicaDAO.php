@@ -83,8 +83,6 @@ class pessoaFisicaDAO
             INNER JOIN tbl_p_fisica_endereco AS pfe ON pfe.id_p_fisica = pfe.id_p_fisica
             INNER JOIN tbl_endereco AS e ON pfe.id_endereco = e.id_endereco WHERE pf.id_p_fisica = $id";
 
-            echo $sql;
-
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
 

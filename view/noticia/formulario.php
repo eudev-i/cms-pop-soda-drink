@@ -11,7 +11,7 @@ if (isset($noticias)) {
   $txtDescricaoNoticia = $noticias->getDescricao();
   $selectStatus = $noticias->getStatus();
   $selectStatusHome = $noticias->getStatusHome();
-  
+
   if ($selectStatusHome == 1) {
     $selected_home = "SELECTED";
     $selected_desativado_home = "";
@@ -39,7 +39,7 @@ if (isset($noticias)) {
 
   //Função do onclick para saber qual ação chama o router
   $router = "router('noticia', 'inserir', 0)";
-  
+
   // Muda o texto do botão e título
   $botao = "Salvar";
   $titulo = "CADASTRAR NOTÍCIA";
@@ -72,7 +72,7 @@ if (isset($noticias)) {
     <div class="caixa_inputs_evento titulo_e_localidade">
       <label>Status</label><br>
       <div class="cadastro_necessario">
-        <select name="select_status"> 
+        <select name="select_status">
         <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
 
         <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
@@ -82,7 +82,7 @@ if (isset($noticias)) {
       <div class="caixa_inputs_evento titulo_e_localidade">
       <label>Status Home</label><br>
       <div class="cadastro_necessario">
-        <select name="select_status_home"> 
+        <select name="select_status_home">
           <option <?= @$selected_home ?> value="1"> Ativado </option>
 
           <option value="0" <?= @$selected_desativado_home ?>> Desativado</option>

@@ -40,6 +40,7 @@ if (isset($produto)) {
   $fibra_alimentar = $produto->getFibraAlimentar();
   $sodio = $produto->getSodio();
   $status = $produto->getStatus();
+  $status_home = $produto->getStatusHome();
   $_SESSION['id_nutricional'] = $id_nutricional;
   $_SESSION['id_produto_componente'] = $id_produto_componente;
   $_SESSION['imagem'] = $imagem;
@@ -50,6 +51,7 @@ if (isset($produto)) {
     $selected_ativado = "SELECTED";
     $selected_desativado = "SELECTED";
   }
+
   //Função do onclick para saber qual ação chama o router
   $router = "router('produto', 'atualizar', '$id')";
   // Muda o texto do botão e título
@@ -139,11 +141,13 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
         <label for="txt_demanda_mensal">Demanda Mensal: </label> <br>
         <input type="number" id="txt_demanda_mensal" name="txt_demanda_mensal" value="<?= @$demanda_mensal ?>">
 
+        <label for="txt_estoque_seguranca">Estoque de Segurança: </label> <br>
+        <input type="number" id="txt_estoque_seguranca" name="txt_estoque_seguranca" value="<?= @$estoque_seguranca ?>">
+
       </div>
 
       <div class="coluna_form_produto">
-        <label for="txt_estoque_seguranca">Estoque de Segurança: </label> <br>
-        <input type="number" id="txt_estoque_seguranca" name="txt_estoque_seguranca" value="<?= @$estoque_seguranca ?>">
+
 
         <label for="txt_ponto_ressuprimento">Ponto de Ressuprimento: </label> <br>
         <input type="number" id="txt_ponto_ressuprimento" name="txt_ponto_ressuprimento" value="<?= @$ponto_ressuprimento ?>">
@@ -165,6 +169,12 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
         <select class="select_status" name="select_status">
           <option <?= @$selected_ativado ?> value="1"> Ativado </option>
           <option <?= @$selected_desativado ?> value="0"> Desativado </option>
+        </select>
+
+        <label for="select_status_home">Status Home: </label> <br>
+        <select class="select_status" name="select_status_home">
+          <option  value="1" <?= (@$status_home == 1 ? "SELECTED" : "") ?>> Ativado </option>
+          <option  value="0" <?= (@$status_home == 0 ? "SELECTED" : "") ?>> Desativado </option>
         </select>
 
         <label for="txt_gordura_totais">Gordura Totais: </label> <br>
