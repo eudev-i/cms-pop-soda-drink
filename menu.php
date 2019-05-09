@@ -43,16 +43,27 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
 <div class="sidenav">
   <div class="menu centralizarY">
     <div class="foto_usuario centralizarX">
+<<<<<<< HEAD
+
+    </div>
+  </div>
+  <a href="#" class="editar_perfil" id="editar">Editar perfil </a>
+  <button <?= @$modulo_geral ?> class="dropdown-btn">Páginas
+=======
     
     </div>
   </div>
   <a href="#" class="editar_perfil" id="editar">Editar perfil </a>
   <button <?= @$modulo_geral ?> class="dropdown-btn">Geral
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   <i class="fas fa-angle-down fa-2px"></i>
   </button>
 
   <div class="dropdown-container">
+<<<<<<< HEAD
+=======
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/home.php"?>">Home</a>
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     <a style="margin-left: 10px;" href="<?= "$path_url/cms/view/pagina_promocao.php" ?>">Promoção</a>
     <a style="margin-left: 10px;" href="<?= "$path_url/cms/view/pagina_eventos.php" ?>">Eventos</a>
     <a style="margin-left: 10px;" href="<?= "$path_url/cms/view/pagina_noticia.php" ?>">Notícia</a>
@@ -64,11 +75,19 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
 	  <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_planeta_sustentavel.php" ?>">Planeta Sustentável</a>
     <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_cor.php" ?>">Cores</a>
   </div>
+<<<<<<< HEAD
+  <button <?= @$modulo_produto ?> class="dropdown-btn">Produtos
+    <i class="fas fa-angle-down fa-2px"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="<?= "$path_url/cms/view/pagina_produto.php"?>">Bebidas</a>
+=======
   <button <?= @$modulo_produto ?> class="dropdown-btn">Produto
     <i class="fas fa-angle-down fa-2px"></i>
   </button>
   <div class="dropdown-container">
     <a href="<?= "$path_url/cms/view/pagina_produto.php"?>">Produto</a>
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     <a href="<?= "$path_url/cms/view/pagina_componente.php"?>">Componente</a>
     <a href="<?= "$path_url/cms/view/pagina_brinde.php"?>">Brinde</a>
   </div>
@@ -94,12 +113,20 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_anuncios.php" ?>">Anuncios</a>
   </div>
 
+<<<<<<< HEAD
+  <button <?= @$modulo_administracao ?> class="dropdown-btn">Funcionário
+    <i class="fas fa-angle-down fa-2px"></i>
+  </button>
+  <div class="dropdown-container">
+    <a style="margin-left:10px;" onclick="adm_funcionario();">Administração</a>
+=======
   <button <?= @$modulo_administracao ?> class="dropdown-btn">Administração
     <i class="fas fa-angle-down fa-2px"></i>
   </button>
   <div class="dropdown-container">
     <a style="margin-left:10px;" onclick="adm_funcionario();">Funcionário</a>
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_nivel_perfil.php" ?>">Nível Perfil</a>
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   </div>
 </div>
 
