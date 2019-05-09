@@ -38,11 +38,7 @@ if (isset($sobre)) {
     <label for="file_img">Imagem</label>
     <input type="file" id="file_img" name="file_img" value="<?= @$imagem ?>">
     <label for="txt_descricao">Titulo</label>
-<<<<<<< HEAD
-    <input type="text" id="txt_titulo" name="txt_titulo" required value="<?= @$tituloSobre?>">
-=======
     <textarea name="txt_titulo" rows="4" required><?= @$tituloSobre ?></textarea>
->>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     <label for="txt_descricao">Descrição</label>
     <textarea name="txt_descricao" rows="4" required><?= @$descricao ?></textarea>
     <label for="select_status">Status</label>
