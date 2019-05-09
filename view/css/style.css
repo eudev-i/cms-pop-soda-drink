@@ -445,13 +445,21 @@ input[type=submit]:hover, input[type=button]:hover {
 /* GEREN. FUNCIONÁRIO */
 
 .opcoes_funcionario{
+<<<<<<< HEAD
   width: 800px;
+=======
+  width: 460px;
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   height: 400px;
 }
 
 .caixa_opcao{
   width: 200px;
   height: 250px;
+<<<<<<< HEAD
+=======
+  /* margin-left: 30px; */
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   margin-top: 30px;
 }
 
@@ -879,8 +887,12 @@ height: 148px;
 
 .caixa_form_eventos{
   width: 700px;
+<<<<<<< HEAD
   min-height:320px;
   height: auto;
+=======
+  height: 500px;
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   padding: 20px;
   margin-top: 90px;
   border-radius: 10px;
@@ -903,7 +915,10 @@ height: 148px;
   width: 49%;
   float: left;
   margin-left: 7px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
 }
 
 .titulo_e_localidade{

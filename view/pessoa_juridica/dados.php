@@ -21,6 +21,7 @@ $(document).ready(function(){
   // });
 });
 
+<<<<<<< HEAD
 function consulta(id){
   $.ajax({
     type: "GET",
@@ -32,6 +33,19 @@ function consulta(id){
 
   $('#container').fadeIn(600);
 }
+=======
+// function consulta(id){
+//   $.ajax({
+//     type: "GET",
+//     url: "<?= "$path_url/cms/view/pessoa_juridica/modal.php?id="?>"+id,
+//     success: function(dados){
+//       $(".modal").html(dados)
+//     }
+//   });
+//
+//   $('#container').fadeIn(600);
+// }
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
 
 </script>
 

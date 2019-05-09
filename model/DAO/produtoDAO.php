@@ -106,7 +106,10 @@ class ProdutoDAO
       '$status_home'
     )";
 
+<<<<<<< HEAD
 echo $sql;
+=======
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
 
@@ -175,7 +178,11 @@ echo $sql;
     $fibra_alimentar = $produto->getFibraAlimentar();
     $sodio = $produto->getSodio();
     $status = $produto->getStatus();
+<<<<<<< HEAD
     $produto->setStatusHome($_POST['select_status_home']);
+=======
+    $status_home = $produto->getStatusHome();
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
 
     // Query de update
     $sql = "CALL sp_produto_update
@@ -211,7 +218,12 @@ echo $sql;
       '$gordura_trans',
       '$fibra_alimentar',
       '$sodio',
+<<<<<<< HEAD
       '$status'
+=======
+      '$status',
+      '$status_home'
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     )";
 
     // Recebendo a função que faz a conexão com BD
