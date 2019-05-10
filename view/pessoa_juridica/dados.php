@@ -21,18 +21,6 @@ $(document).ready(function(){
   // });
 });
 
-function consulta(id){
-  $.ajax({
-    type: "GET",
-    url: "<?= "$path_url/cms/view/pessoa_juridica/modal.php?id="?>"+id,
-    success: function(dados){
-      $(".modal").html(dados)
-    }
-  });
-
-  $('#container').fadeIn(600);
-}
-
 
 </script>
 

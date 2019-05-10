@@ -1002,9 +1002,6 @@ if (isset($_GET['controller'])) {
       $controllerProduto->inserirRegistro();
 
       // Chamando a função que preenche a página com a lista de registros
-
-      // echo "<script>adm_cms('produto');</script>";
-
       echo "<script>adm_cms('produto');</script>";
 
       break;

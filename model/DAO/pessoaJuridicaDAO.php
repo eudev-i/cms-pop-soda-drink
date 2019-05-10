@@ -36,7 +36,10 @@ class PessoaJuridicaDAO{
   }
 
   public function selectAll(){
-    $sql = "SELECT * from tbl_pessoa_juridica;";
+    $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade, e.cep
+	  FROM tbl_pessoa_juridica AS pj
+	  INNER JOIN tbl_p_juridica_endereco AS pje ON pj.cnpj = pje.cnpj
+	  INNER JOIN tbl_endereco AS e ON pje.id_endereco = e.id_endereco";
 
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
@@ -54,6 +57,11 @@ class PessoaJuridicaDAO{
       $user[$cont]->setCnpj($rsUser['cnpj']);
       $user[$cont]->setEmail($rsUser['email']);
       $user[$cont]->setNomeFantasia($rsUser['nome_fantasia']);
+      $user[$cont]->setBairro($rsUser['bairro']);
+      $user[$cont]->setTelefone($rsUser['telefone']);
+      $user[$cont]->setCidade($rsUser['cidade']);
+      $user[$cont]->setLogradouro($rsUser['logradouro']);
+      $user[$cont]->setCep($rsUser['cep']);
 
       $cont += 1;
     }

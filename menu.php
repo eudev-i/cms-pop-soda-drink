@@ -31,11 +31,6 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
 <div class="sidenav">
   <div class="menu centralizarY">
     <div class="foto_usuario centralizarX">
-
-    </div>
-  </div>
-  <a href="#" class="editar_perfil" id="editar">Editar perfil </a>
-  <button <?= @$modulo_geral ?> class="dropdown-btn">Páginas
   <i class="fas fa-angle-down fa-2px"></i>
   </button>
 
@@ -52,11 +47,6 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
 	  <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_planeta_sustentavel.php" ?>">Planeta Sustentável</a>
     <a style="margin-left:10px;"   href="<?= "$path_url/cms/view/pagina_cor.php" ?>">Cores</a>
   </div>
-  <button <?= @$modulo_produto ?> class="dropdown-btn">Produtos
-    <i class="fas fa-angle-down fa-2px"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="<?= "$path_url/cms/view/pagina_produto.php"?>">Bebida</a>
     <a href="<?= "$path_url/cms/view/pagina_componente.php"?>">Componente</a>
     <a href="<?= "$path_url/cms/view/pagina_brinde.php"?>">Brinde</a>
   </div>
@@ -81,12 +71,6 @@ if ($rsUser['perfil_nome'] == "Publicitário") {
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_comentario.php" ?>">Comentarios</a>
     <a style="margin-left:10px;" href="<?= "$path_url/cms/view/pagina_anuncios.php" ?>">Anuncios</a>
   </div>
-
-  <button <?= @$modulo_administracao ?> class="dropdown-btn">Funcionário
-    <i class="fas fa-angle-down fa-2px"></i>
-  </button>
-  <div class="dropdown-container">
-    <a style="margin-left:10px;" onclick="adm_funcionario();">Administração</a>
   </div>
 </div>
 

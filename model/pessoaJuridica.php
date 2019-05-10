@@ -22,6 +22,8 @@ Objetivo da Classe: Classe de pessoa jurica
     private $nome_fantansia;
     private $cidade;
     private $logradouro;
+    private $cep;
+    private $bairro;
 
 
   function __construct()
@@ -123,6 +125,22 @@ Objetivo da Classe: Classe de pessoa jurica
 
   public function setLogradouro($logradouro){
     $this->logradouro = $logradouro;
+  }
+
+  public function getCep(){
+    return $this->cep;
+  }
+
+  public function setCep($cep){
+    $this->cep = $cep;
+  }
+
+  public function getBairro(){
+    return $this->bairro;
+  }
+
+  public function setBairro($bairro){
+    $this->bairro = $bairro;
   }
 }
 
