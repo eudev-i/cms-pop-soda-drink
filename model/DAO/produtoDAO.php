@@ -174,6 +174,7 @@ class ProdutoDAO
     $fibra_alimentar = $produto->getFibraAlimentar();
     $sodio = $produto->getSodio();
     $status = $produto->getStatus();
+    $status_home = $produto->getStatusHome();
 
     // Query de update
     $sql = "CALL sp_produto_update
@@ -209,6 +210,8 @@ class ProdutoDAO
       '$gordura_trans',
       '$fibra_alimentar',
       '$sodio',
+      '$status',
+      '$status_home'
     )";
 
     // Recebendo a função que faz a conexão com BD

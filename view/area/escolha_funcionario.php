@@ -16,6 +16,7 @@ $path_url = $_SESSION['path_url'];
 </div>
 <div class="opcoes_funcionario centralizarX centralizarY">
 
+
   <div class="caixa_opcao">
     <div class="foto_opcoes centralizarX">
       <a href="<?= "$path_url/cms/view/pagina_setor.php" ?>">
@@ -46,4 +47,5 @@ $path_url = $_SESSION['path_url'];
       Adm. Funcionário
     </div>
   </div>
+  
 </div>
