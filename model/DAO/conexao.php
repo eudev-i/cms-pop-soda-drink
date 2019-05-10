@@ -33,8 +33,8 @@ class Conexao
 
     $this->server = 'localhost';
     $this->user = 'root';
-    $this->password = '200701';
-    $this->database = 'db_popsodadrink'; 
+    $this->password = 'bcd127';
+    $this->database = 'db_popsoda'; 
 
   }
 
