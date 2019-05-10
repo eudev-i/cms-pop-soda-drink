@@ -1,22 +1,16 @@
 <?php
-
 // Iniciando uma sessão
 session_start();
-
 // Iniciando as variáveis em null para não haver erro
 $path_local = null;
 $path_url = null;
-
 // Variáveis que recebem as variáveis de sessão
 $path_local = $_SESSION['path_local'];
 $path_url = $_SESSION['path_url'];
-
 // Importando o arquivo de autenticação
 require_once "$path_local/cms/verificar_login.php";
-
 // Variável que recebe o função com o usuário autenticado
 $rsUser = verificarAutentica();
-
 ?>
 
 <!DOCTYPE html>
@@ -33,15 +27,11 @@ $rsUser = verificarAutentica();
   <script src="<?= "$path_url/cms/view/js/jquery.js" ?>"></script>
   <script src="<?= "$path_url/cms/view/js/ajax.js" ?>"></script>
   <script>
-
   // Chama função assim que a página é criado
   $(document).ready(function(){
-
     // Função que preenche a página com a lista de registros
     sobre();
-
   });
-
   </script>
 </head>
 <body style="background-color:#E6EAEB">

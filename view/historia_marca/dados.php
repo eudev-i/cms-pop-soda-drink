@@ -25,7 +25,7 @@ $path_url = $_SESSION['path_url'];
     </form>
   </div>
 </div>
-<div id="registros_adm_cargor" class="centralizarX">
+<div id="registros_adm_historia" class="centralizarX">
   <table id="tabela">
     <thead>
       <tr>
@@ -38,7 +38,7 @@ $path_url = $_SESSION['path_url'];
       <?php
 
         // Importando a controller de historia_marca
-        require_once "$path_local/cms/controller/ControllerHistoriaMarca.php";
+        require_once "$path_local/cms/controller/controllerHistoriaMarca.php";
 
         // Instânciando a classe do controler
         $controllerHistoriaMarca = new ControllerHistoriaMarca();
@@ -62,19 +62,6 @@ $path_url = $_SESSION['path_url'];
           </a>
           <a href="#" onclick="router('historia_marca', 'excluir', <?= $rsHistoria[$cont]->getId() ?>);">
             <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
-          </a>
-          <a href="#" onclick="">
-            <?php
-              if($rsHistoria[$cont]->getStatus() == 0){
-            ?>
-              <img src="<?= "$path_url/cms/view/img/ativado.png" ?>" alt="ativado" title="Ativado">
-            <?php
-          }else if($rsHistoria[$cont]->getStatus() == 1){
-            ?>
-                <img src="<?= "$path_url/cms/view/img/desativado.png" ?>" alt="desativado" title="Desativado">
-
-            <?php } ?>
-
           </a>
         </td>
       </tr>

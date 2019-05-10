@@ -53,7 +53,6 @@ class HistoriaMarcaDAO
     // Executa o script no BD
     if (!$con->query($sql))
     echo 'Erro no script de insert';
-    echo($sql);
 
     // Fechando a conexão com BD
     $this->conexao->closeDatabase();

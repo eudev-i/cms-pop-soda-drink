@@ -50,6 +50,32 @@
       }
     }
 
+    public function atualizarRegistro(){
+
+      $id = $_GET['id'];
+
+      // Verifica qual método está sendo requisitado do formulário (POST ou GET)
+      if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+        $titulo = $_POST['txt_titulo'];
+        $arquivo = $_POST['file_video'];
+        $status = $_POST['select_status'];
+
+        // Instânciando a classe Setor
+        $video = new Video();
+
+        // Guardando os dodos no objeto Setor
+        $video->setTitulo($titulo);
+        $video->setArquivo($arquivo);
+        $video->setStatus($status);
+
+
+        // Insere o registro no BD
+        $this->videoDAO->update($video, $id);
+
+      }
+    }
+
     public function listarRegistros(){
 
       return $this->videoDAO->selectAll();

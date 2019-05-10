@@ -6,10 +6,6 @@ Projeto: Pop'Soda Drink
 Autor: Vitoria
 Data Criação: 25/04/2019
 
-Data Modificação:
-Conteúdo Modificação:
-Autor Modificação:
-
 Objetivo da Classe: CRUD da classe da  pessoa fisica
 
 */
@@ -37,84 +33,6 @@ class pessoaFisicaDAO
 
   }
 
-  // Função que insere um registro no banco
-  public function insert(PessoaFisica $pessoaFisica)
-  {
-
-    // Query de insert
-    $sql = "INSERT INTO tbl_pessoa_fisica(nome, cpf, foto, email, telefone, celular, usuario, senha, status, data_nascimento)
-            VALUES(
-            '".$pessoaFisica->getNome()."',
-            '".$pessoaFisica->getCpf()."',
-            '".$pessoaFisica->getImagem()."',
-            '".$pessoaFisica->getEmail()."',
-            '".$pessoaFisica->getTelefone()."',
-            '".$pessoaFisica->getCelular()."',
-            '".$pessoaFisica->getUsuario()."',
-            '".$pessoaFisica->getSenha()."',
-            '".$pessoaFisica->getStatus()."',
-            '".$pessoaFisica->getDtNasc()."'
-            )";
-
-    // Recebendo a função que faz a conexão com BD
-    $con = $this->conexao->connectDatabase();
-
-    // Executa o script no BD
-    if (!$con->query($sql))
-    echo 'Erro no script de insert';
-
-    // Fechando a conexão com BD
-    $this->conexao->closeDatabase();
-
-  }
-
-  // Função deleta um registro no banco
-  public function delete($id)
-  {
-
-    // Query de delete
-    $sql = "DELETE FROM tbl_pessoa_fisica WHERE id_p_fisica=".$id;
-
-    // Recebendo a função que faz a conexão com BD
-    $con = $this->conexao->connectDatabase();
-
-    // Executa o script no BD
-    if (!$con->query($sql))
-    echo 'Erro no script de delete';
-
-    // Fechando a conexão com BD
-    $this->conexao->closeDatabase();
-
-  }
-
-  // Função atualiza um registro no banco
-  public function update(PessoaFisica $pessoaFisica, $id)
-  {
-
-    // Query de update
-    $sql = "UPDATE tbl_pessoa_fisica
-            SET nome ='".$pessoaFisica->getNome()."',
-                cpf ='".$pessoaFisica->getCpf()."',
-                foto ='".$pessoaFisica->getImagem()."',
-                email ='".$pessoaFisica->getEmail()."',
-                telefone ='".$pessoaFisica->getTelefone()."',
-                celular ='".$pessoaFisica->getCelular()."',
-                usuario ='".$pessoaFisica->getUsuario()."',
-                senha ='".$pessoaFisica->getSenha()."',
-                status ='".$pessoaFisica->getStatus()."',
-                data_nascimento ='".$pessoaFisica->getDtNasc()."',
-            WHERE id_p_fisica=".$id;
-
-    // Recebendo a função que faz a conexão com BD
-    $con = $this->conexao->connectDatabase();
-
-    if (!$con->query($sql))
-    echo 'Erro no script de update';
-
-    // Fechando a conexão com BD
-    $this->conexao->closeDatabase();
-
-  }
 
   // Função lista todos os registros do banco
   public function selectAll()
@@ -141,15 +59,7 @@ class pessoaFisicaDAO
       // Setando os valores do objeto
       $pessoaFisica[$cont]->setId($rsPessoaFisica['id_p_fisica']);
       $pessoaFisica[$cont]->setNome($rsPessoaFisica['nome']);
-      $pessoaFisica[$cont]->setCpf($rsPessoaFisica['cpf']);
-      $pessoaFisica[$cont]->setImagem($rsPessoaFisica['foto']);
       $pessoaFisica[$cont]->setEmail($rsPessoaFisica['email']);
-      $pessoaFisica[$cont]->setTelefone($rsPessoaFisica['telefone']);
-      $pessoaFisica[$cont]->setCelular($rsPessoaFisica['celular']);
-      $pessoaFisica[$cont]->setUsuario($rsPessoaFisica['usuario']);
-      $pessoaFisica[$cont]->setSenha($rsPessoaFisica['senha']);
-      $pessoaFisica[$cont]->setStatus($rsPessoaFisica['status']);
-      $pessoaFisica[$cont]->setDtNasc($rsPessoaFisica['data_nascimento']);
 
       $cont += 1;
 
@@ -168,9 +78,10 @@ class pessoaFisicaDAO
   {
 
     // Query de select + id
-    $sql = "SELECT pf.*, e.* FROM tbl_pessoa_fisica AS pf
-			INNER JOIN tbl_endereco AS e ON e.id_endereco = pf.id_endereco
-			WHERE pf.id_p_fisica = $id";
+    $sql = "SELECT pf.*, e.*
+            FROM tbl_pessoa_fisica AS pf
+            INNER JOIN tbl_p_fisica_endereco AS pfe ON pfe.id_p_fisica = pfe.id_p_fisica
+            INNER JOIN tbl_endereco AS e ON pfe.id_endereco = e.id_endereco WHERE pf.id_p_fisica = $id";
 
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
@@ -190,13 +101,12 @@ class pessoaFisicaDAO
       $pessoaFisica->setCpf($rsPessoaFisica['cpf']);
       $pessoaFisica->setImagem($rsPessoaFisica['foto']);
       $pessoaFisica->setEmail($rsPessoaFisica['email']);
-      $pessoaFisica->setTelefone($rsPessoaFisica['telefone']);
       $pessoaFisica->setCelular($rsPessoaFisica['celular']);
-      $pessoaFisica->setUsuario($rsPessoaFisica['usuario']);
-      $pessoaFisica->setSenha($rsPessoaFisica['senha']);
       $pessoaFisica->setStatus($rsPessoaFisica['status']);
-      $pessoaFisica->setDtNasc($rsPessoaFisica['data_nascimento']);
-
+      $pessoaFisica->setLogradouro($rsPessoaFisica['logradouro']);
+      $pessoaFisica->setBairro($rsPessoaFisica['bairro']);
+      $pessoaFisica->setCidade($rsPessoaFisica['cidade']);
+      $pessoaFisica->setUf($rsPessoaFisica['uf']);
     }
 
     // Fechando a conexão com BD

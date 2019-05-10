@@ -82,6 +82,7 @@ class ControllerProduto
       $produto->setSodio($_POST['txt_sodio']);
       $produto->setIdComponente($_POST['select_materia_prima']);
       $produto->setStatus($_POST['select_status']);
+      $produto->setStatusHome($_POST['select_status_home']);
 
       // Insere o registro no BD
       $this->produtoDAO->insert($produto);
@@ -156,6 +157,7 @@ class ControllerProduto
       $produto->setFibraAlimentar($_POST['txt_fibra_alimentar']);
       $produto->setSodio($_POST['txt_sodio']);
       $produto->setStatus($_POST['select_status']);
+      $produto->setStatusHome($_POST['select_status_home']);
 
 
       // Atualiza o registro no BD

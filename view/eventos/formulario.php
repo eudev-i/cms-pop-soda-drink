@@ -9,7 +9,17 @@ if (isset($eventos)) {
   $txtDescricaoEvento = $eventos->getDescricao();
   $txtLocalidadeEvento = $eventos->getLocalidade();
   $txtDataEvento = $eventos->getDataEvento();
-  $status = $eventos->getStatus();
+  $selectStatus = $eventos->getStatus();
+
+
+  if ($selectStatus == 1) {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "";
+  }else {
+    $selected_ativado_status = "SELECTED";
+    $selected_desativado_status = "SELECTED";
+  }
+
 
   //Função do onclick para saber qual ação chama o router
   $router = "router('eventos', 'atualizar', '".$idEventos."')";
@@ -40,24 +50,53 @@ if (isset($eventos)) {
       <label class="lblEventos" for="txtTituloEvento">Título do evento:</label><br>
       <input class="inputEventos font-input" type="text" id="txtTituloEvento" name="txtTituloEvento" value="<?= @$txtTituloEvento?>">
     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     <div class="caixa_inputs_evento titulo_e_localidade">
       <label class="lblEventos" for="txtLocalidadeEvento">Localidade:</label>
       <input class="inputEventos font-input" type="text" id="txtLocalidadeEvento" name="txtLocalidadeEvento" value="<?= @$txtLocalidadeEvento?>">
     </div>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
     <div class="caixa_inputs_evento descricao_data_e_status">
       <label class="lblEventos" for="txtDescricaoEvento">Descrição:</label>
       <textarea class="inputEventos font-input" type="text" id="txtDescricaoEvento" name="txtDescricaoEvento"><?= @$txtDescricaoEvento?></textarea>
     </div>
+<<<<<<< HEAD
+
+    <div class="caixa_inputs_evento descricao_data_e_status">
+      <label for="txtDataEvento">Data:</label><br>
+      <input class="inputEventos font-input largura_data" maxlength="10" type="text" id="txtDataEvento" name="txtDataEvento" value="<?= @$txtDataEvento?>"><br>
+
+      <label>Status</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_status">
+=======
     <div class="caixa_inputs_evento descricao_data_e_status">
       <label class="lblEventos" for="txtDataEvento">Data:</label><br>
       <input class="inputEventos font-input largura_data" maxlength="10" type="text" id="txtDataEvento" name="txtDataEvento" value="<?= @$txtDataEvento?>"><br>
-      <label class="lblEventos">Status:</label><br>
-      <select name="select_status">
-        <option value="1" <?php if (@$status == 1) echo 'selected="selected"';?>>Ativado</option>
-        <option value="0" <?php if (@$status == 0) echo 'selected="selected"';?>>Desativado</option>
-      </select>
+      
     </div>
+    <div class="caixa_inputs_evento titulo_e_localidade">
+      <label>Status</label><br>
+      <div class="cadastro_necessario">
+        <select name="select_status"> 
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
+        <option <?= @$selected_ativado_status ?> value="1"> Ativado </option>
+
+        <option <?= @$selected_desativado_status ?> value="0"> Desativado</option>
+
+        </select>
+      </div>
+    </div>
+<<<<<<< HEAD
+=======
     
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
 
     <div class="area_botao_form">
       <input type="button" id="btn_submit" value="<?= $botao ?>" onclick="<?= $router ?>">

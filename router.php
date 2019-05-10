@@ -240,6 +240,16 @@ if (isset($_GET['controller'])) {
 
       break;
 
+      case 'ATUALIZAR':
+
+      // Chamando o método de inserir um novo registro
+      $controllerVideo->atualizarRegistro();
+
+      // Chamando a função que preenche a página com a lista de cargos
+      echo "<script>videos();</script>";
+
+      break;
+
       case 'EXCLUIR':
 
       // Chamando o método de inserir um novo registro
@@ -253,7 +263,7 @@ if (isset($_GET['controller'])) {
       case 'BUSCAR':
 
       // Chamando o método de inserir um novo registro
-      $controllerVideo->buscarRegistro();
+      $video = $controllerVideo->buscarRegistro();
 
       // Chamando a função que preenche a página com a lista de cargos
       require_once "$path_local/cms/view/videos/formulario.php";
@@ -267,7 +277,7 @@ if (isset($_GET['controller'])) {
     case 'FALECONOSCO':
 
     // Importando a classe Controller do Cargo
-    require_once "$path_local/cms/controller/ControllerFaleConosco.php";
+    require_once "$path_local/cms/controller/controllerFaleConosco.php";
 
     // Instância da Controller do Setor
     $controllerFaleConosco = new ControllerFaleConosco();
@@ -303,7 +313,7 @@ if (isset($_GET['controller'])) {
     case 'HISTORIA_MARCA':
 
     // Importando a classe Controller do Cargo
-    require_once "$path_local/cms/controller/ControllerHistoriaMarca.php";
+    require_once "$path_local/cms/controller/controllerHistoriaMarca.php";
 
     // Instância da Controller do Setor
     $controllerHistoriaMarca = new ControllerHistoriaMarca();
@@ -358,7 +368,7 @@ if (isset($_GET['controller'])) {
     case 'SOBRE':
 
     // Importando a classe Controller do Cargo
-    require_once "$path_local/cms/controller/sobre.php";
+    require_once "$path_local/cms/controller/controllerSobre.php";
 
     // Instância da Controller do Setor
     $controllerSobre = new ControllerSobre();
@@ -423,21 +433,21 @@ if (isset($_GET['controller'])) {
 
       case 'INSERIR':
 
-      // Chamando o método de inserir um novo eventos
-      $controllerEventos->inserirEvento();
+        // Chamando o método de inserir um novo eventos
+        $controllerEventos->inserirEvento();
 
-      // Chamando a função que preenche a página com a lista de eventos
-      echo "<script>eventos();</script>";
+        // Chamando a função que preenche a página com a lista de eventos
+        echo "<script>eventos();</script>";
 
       break;
 
       case 'ATUALIZAR':
 
-      // Chamando o método de atualizar um registro
-      $controllerEventos->atualizarEvento();
+        // Chamando o método de atualizar um registro
+        $controllerEventos->atualizarEvento();
 
-      // Chamando a função que preenche a página com a lista de eventos
-      echo "<script>eventos();</script>";
+        // Chamando a função que preenche a página com a lista de eventos
+        echo "<script>eventos();</script>";
 
       break;
 
@@ -992,6 +1002,9 @@ if (isset($_GET['controller'])) {
       $controllerProduto->inserirRegistro();
 
       // Chamando a função que preenche a página com a lista de registros
+
+      // echo "<script>adm_cms('produto');</script>";
+
       echo "<script>adm_cms('produto');</script>";
 
       break;

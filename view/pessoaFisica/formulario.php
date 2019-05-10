@@ -12,7 +12,7 @@ $path_local = $_SESSION['path_local'];
 if (isset($_GET["id"])) {
 
   // Importando a controller de setor
-  require_once "$path_local/cms/controller/ControllerPessoaFisica.php";
+  require_once "$path_local/cms/controller/controllerPessoaFisica.php";
 
   // Instânciando a classe do controler
   $controllerPessoaFisica = new ControllerPessoaFisica();
@@ -23,19 +23,15 @@ if (isset($_GET["id"])) {
   // Pegando os dados do objeto e setando em variavéis locais
   $id = $rsPessoaFisica->getId();
   $nome = $rsPessoaFisica->getNome();
-  $cpf = $rsPessoaFisica->getCpf();
   $imagem = $rsPessoaFisica->getImagem();
   $email = $rsPessoaFisica->getEmail();
-  $telefone = $rsPessoaFisica->getTelefone();
   $celular = $rsPessoaFisica->getCelular();
-  $usuario = $rsPessoaFisica->getUsuario();
-  $senha = $rsPessoaFisica->getSenha();
-  $status = $rsPessoaFisica->getStatus();
-  $dtNasc = $rsPessoaFisica->getDtNasc();
+  $cpf = $rsPessoaFisica->getCpf();
   $logradouro = $rsPessoaFisica->getLogradouro();
   $bairro = $rsPessoaFisica->getBairro();
   $cidade = $rsPessoaFisica->getCidade();
   $uf = $rsPessoaFisica->getUf();
+  $foto = $rsPessoaFisica->getImagem();
 
 }
 
@@ -53,15 +49,16 @@ if (isset($_GET["id"])) {
 </script>
 
 
-<div class="caixa_form_fisica centralizarX">
 
-  <div id="icon_fechar">
-    <a id="close">
-      <img src="img/icon_close.png" alt="icone não encontrado" title="fechar" id="img_icon_fechar">
+<div class="caixa_form_fisica centralizarX">
+  <div class="head-fale-conosco">
+    <span>INFORMAÇÕES</span>
+    <a id="close" class="btn-close trigger" href="#">
+      <i class="fa fa-times" aria-hidden="true"></i>
     </a>
   </div>
 
-  <form id="form" method="POST" enctype="multipart/form-data">
+  <div class="modal-conteudo-fale-conosco">
     <div class="clearfix" style="height:420px;">
       <div class="coluna_form_fisica">
         <label for="file_img">Nome</label>
@@ -91,11 +88,10 @@ if (isset($_GET["id"])) {
 
     <div class="area_foto centralizarX">
       <label for="file_img">Foto</label>
-      <div id="area_foto_p_fisico"></div>
+      <img src="<?= "$path_url/cms/view/img/temp/".$foto ?>" alt="" id="area_foto_p_fisico">
     </div>
 
     <div class="area_botao_form">
 
     </div>
-  </form>
 </div>

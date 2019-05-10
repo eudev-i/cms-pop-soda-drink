@@ -102,7 +102,10 @@ class ComentarioDAO
 
   public function selectById($id){
     // Query de select + id
-  $sql = "SELECT comentario.*, pessoa_fisica.nome AS pessoa_nome FROM tbl_comentario AS comentario INNER JOIN tbl_pessoa_fisica AS pessoa_fisica ON comentario.id_comentario= $id";
+  $sql = "SELECT comentario.*, pessoa_fisica.nome AS pessoa_nome
+          FROM tbl_comentario AS comentario
+          INNER JOIN tbl_pessoa_fisica AS pessoa_fisica ON comentario.id_p_fisica = pessoa_fisica.id_p_fisica
+          WHERE comentario.id_comentario = $id";
 
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();

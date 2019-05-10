@@ -40,11 +40,28 @@ $rsUser = verificarAutentica();
     // Função que preenche a página com a lista de eventos
     adm_cms('pessoa_juridica');
 
+    function consulta(id){
+      $.ajax({
+        type: "GET",
+        url: "<?= "$path_url/cms/view/pessoa_juridica/modal.php?id="?>"+id,
+        success: function(dados){
+          $(".modal").html(dados)
+        }
+      });
+
+      $('#container').fadeIn(600);
+    }
+
   });
 
   </script>
 </head>
 <body style="background-color:#E6EAEB">
+  <div id="container">
+    <div class="modal">
+
+    </div>
+  </div>
   <header>
     <div class="titulo centralizarY">
       <div class="logo">

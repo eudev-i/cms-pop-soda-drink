@@ -8,6 +8,7 @@
         private $status;
         private $imagem;
         private $precisaCadastro;
+        private $statusHome;
 
         public function getIdPromocao(){
           return $this->idPromocao;
@@ -55,6 +56,14 @@
       
         public function setPrecisaCadastro($precisaCadastro){
           $this->precisaCadastro = $precisaCadastro;
+        }
+
+        public function getStatusHome(){
+          return $this->statusHome;
+        }
+      
+        public function setStatusHome($statusHome){
+          $this->statusHome = $statusHome;
         }
 
         

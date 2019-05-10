@@ -24,6 +24,7 @@
   margin-top: 30px;
   margin-left: 530px;
   border-radius: 5px;
+
   }
 
   #icon_fechar{
@@ -113,6 +114,19 @@ height: 100px;
   margin-top: 20px;
 
 
+}
+
+.caixa_form_fale_conosco{
+  width: 640px;
+  height: 700px;
+  background-color: white;
+
+}
+
+.caixa_form_fisica{
+  width: 640px;
+  height: 800px;
+  background-color: white;
 }
 
 .editar_perfil{
@@ -277,7 +291,7 @@ background-color: #15233a;
   border-radius: 4px;
 }
 
-.caixa_login, .caixa_form{
+.caixa_login, .caixa_form, .caixa_form_componente, .caixa_form_produto{
   width: 400px;
   height: auto;
   padding: 20px;
@@ -285,6 +299,26 @@ background-color: #15233a;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: #fff;
 
+}
+
+.caixa_form_componente{
+  width: 875px;
+}
+
+.caixa_form_produto{
+  width: 1140px;
+}
+
+.coluna_form{
+  width: 265px;
+  float: left;
+  margin-left: 20px;
+}
+
+.coluna_form_produto{
+  width: 265px;
+  float: left;
+  margin-left: 20px;
 }
 
 .caixa_login{
@@ -411,14 +445,21 @@ input[type=submit]:hover, input[type=button]:hover {
 /* GEREN. FUNCIONÁRIO */
 
 .opcoes_funcionario{
+<<<<<<< HEAD
+  width: 800px;
+=======
   width: 460px;
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   height: 400px;
 }
 
 .caixa_opcao{
   width: 200px;
   height: 250px;
+<<<<<<< HEAD
+=======
   /* margin-left: 30px; */
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   margin-top: 30px;
 }
 
@@ -453,7 +494,7 @@ height: 148px;
 }
 
 /* ADM. SETOR */
-#registros_adm_setor, #registros_adm_cargor, #registros_enquete, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos, #registros_adm_sustentavel{
+#registros_adm_setor, #registros_adm_historia, #registros_adm_cargor, #registros_enquete, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos, #registros_adm_sustentavel{
   margin-top: 50px;
   width: 400px;
   max-height: 350px;
@@ -464,7 +505,7 @@ height: 148px;
   width: 900px;
 }
 
-#registros_enquete, #registros_pops_escolas, #registros_adm_fale_conosco, #registros_eventos{
+#registros_enquete, #registros_adm_historia, #registros_pops_escolas, #registros_adm_fale_conosco{
     width: 700px;
 }
 
@@ -644,6 +685,10 @@ height: 148px;
 
 }
 
+.modal-conteudo-fale-conosco{
+  padding: 10px;
+}
+
 .head-comentario {
   width: 85%;
   height: 32px;
@@ -651,7 +696,14 @@ height: 148px;
   overflow: hidden;
   background: #e2525c;
 }
+.head-fale-conosco{
+  width: 90.7%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #e2525c;
 
+}
 .head-anuncio{
   width: 89%;
   height: 32px;
@@ -693,6 +745,12 @@ height: 148px;
 }
 
 .head-comentario span{
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.head-fale-conosco span{
   font-size: 25px;
   color: white;
   font-family: sans-serif;
@@ -819,8 +877,22 @@ height: 148px;
 
 }
 
+.caixa_form_funcionario{
+  width: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: #fff;
+}
+
 .caixa_form_eventos{
   width: 700px;
+<<<<<<< HEAD
+  min-height:320px;
+  height: auto;
+=======
+  height: 500px;
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
   padding: 20px;
   margin-top: 90px;
   border-radius: 10px;
@@ -843,6 +915,10 @@ height: 148px;
   width: 49%;
   float: left;
   margin-left: 7px;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 532366e673ae37a213d0feee6ea43e7610bfc30a
 }
 
 .titulo_e_localidade{
@@ -873,8 +949,6 @@ height: 148px;
 .img_size{
   width: 100px;
   height: 100px;
-  float: right;
-  margin-right: 30%;
 }
 
 #registros_adm_sustentavel #tabela #descricao{
@@ -889,4 +963,21 @@ height: 148px;
 #registros_adm_sustentavel #tabela #imagem img{
   width: 150px;
   height: 100px;
+}
+
+#txt_descricao_produto{
+  height: 118px;
+}
+
+#label_opcoes{
+  width: 100%;
+  font-weight: bold;
+  font-family: arial;
+  text-align: center;
+}
+
+.color_sample{
+  width: 28px;
+  height: 28px;
+  border-radius: 15px;
 }

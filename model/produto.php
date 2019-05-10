@@ -50,6 +50,7 @@ class Produto
   private $id_componente;
   private $id_produto_componente;
   private $status;
+  private $status_home;
 
   // Métodos getters e setters da classe
   public function getId()
@@ -370,6 +371,16 @@ class Produto
   public function setStatus($status)
   {
     $this->status = $status;
+  }
+
+  public function getStatusHome()
+  {
+    return $this->status_home;
+  }
+
+  public function setStatusHome($status_home)
+  {
+    $this->status_home = $status_home;
   }
 
 }

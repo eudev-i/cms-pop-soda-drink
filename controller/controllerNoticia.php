@@ -44,6 +44,8 @@
 
                 $txtDataNoticia = $_POST['txtDataNoticia'];
                 $txtDescricaoNoticia = $_POST['txtDescricaoNoticia'];
+                $selectStatus = $_POST['select_status'];
+                $selectStatusHome = $_POST['select_status_home'];
 
 
                 //Instânciando a classe noticia
@@ -54,6 +56,8 @@
                 $noticias->setImagem($imagem);
                 $noticias->setDataNoticia($txtDataNoticia);
                 $noticias->setDescricao($txtDescricaoNoticia);
+                $noticias->setStatus($selectStatus);
+                $noticias->setStatusHome($selectStatusHome);
 
                 //Chamando o método de inserir no banco
                 $this->noticiaDAO->insertNoticia($noticias);
@@ -88,6 +92,8 @@
             $imagem = upload($_FILES['flefoto']);
             $txtDataNoticia = $_POST['txtDataNoticia'];
             $txtDescricaoNoticia = $_POST['txtDescricaoNoticia'];
+            $selectStatus = $_POST['select_status'];
+            $selectStatusHome = $_POST['select_status_home'];
 
             //Instânciando a classe noticia
             $noticias = new Noticia();
@@ -97,6 +103,8 @@
             $noticias->setImagem($imagem);
             $noticias->setDataNoticia($txtDataNoticia);
             $noticias->setDescricao($txtDescricaoNoticia);
+            $noticias->setStatus($selectStatus);
+            $noticias->setStatusHome($selectStatusHome);
 
             //Chamando o método de inserir no banco
             $this->noticiaDAO->updateNoticia($noticias, $idNoticia);

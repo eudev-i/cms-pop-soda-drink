@@ -40,11 +40,11 @@
                 //resgata os values dos inputs para fazer o insert
                 $txtTituloPromocao = $_POST['txtTituloPromocao'];
                 $txtDescricaoPromocao = $_POST['txtDescricaoPromocao'];
-                $rdoCadastroNecessario = $_POST['rdoCadastro'];
-                $rdoStatus = $_POST['rdoStatus'];
+                $selectCadastroNecessario = $_POST['select_cadastro'];
+                $selectStatus = $_POST['select_status'];
+                $selectStatusHome = $_POST['select_home'];
                 //var_dump($_FILES['flefoto']);
                 $imagem = upload($_FILES['flefoto']);
-
 
                 //Instânciando a classe Promocao
                 $promocoes = new Promocao();
@@ -53,8 +53,9 @@
                 $promocoes->setTitulo($txtTituloPromocao);
                 $promocoes->setDescricao($txtDescricaoPromocao);
                 $promocoes->setImagem($imagem);
-                $promocoes->setPrecisaCadastro($rdoCadastroNecessario);
-                $promocoes->setStatus($rdoStatus);                
+                $promocoes->setPrecisaCadastro($selectCadastroNecessario);
+                $promocoes->setStatus($selectStatus);               
+                $promocoes->setStatusHome($selectStatusHome); 
 
                 //Chamando o método de inserir no banco
                 $this->promocaoDAO->insertPromocao($promocoes);
@@ -84,8 +85,9 @@
                 //resgata os values dos inputs para fazer o insert
                 $txtTituloPromocao = $_POST['txtTituloPromocao'];
                 $txtDescricaoPromocao = $_POST['txtDescricaoPromocao'];
-                $rdoCadastroNecessario = $_POST['rdoCadastro'];
-                $rdoStatus = $_POST['rdoStatus'];
+                $selectCadastroNecessario = $_POST['select_cadastro'];
+                $selectStatus = $_POST['select_status'];
+                $selectStatusHome = $_POST['select_home'];
                 //var_dump($_FILES['flefoto']);
                 $imagem = upload($_FILES['flefoto']);
 
@@ -95,8 +97,9 @@
                 //Guardando os dados fornecidos pelo usuário no obj Promocao
                 $promocoes->setTitulo($txtTituloPromocao);
                 $promocoes->setDescricao($txtDescricaoPromocao);
-                $promocoes->setPrecisaCadastro($rdoCadastroNecessario);
-                $promocoes->setStatus($rdoStatus);
+                $promocoes->setPrecisaCadastro($selectCadastroNecessario);
+                $promocoes->setStatus($selectStatus);
+                $promocoes->setStatusHome($selectStatusHome);
                 $promocoes->setImagem($imagem);
                 
 
@@ -119,9 +122,6 @@
             return $this->promocaoDAO->selectByIdPromocao($idPromocoes);
 
         }
-
     }
-
-
 
 ?>

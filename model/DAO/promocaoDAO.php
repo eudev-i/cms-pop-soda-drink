@@ -20,12 +20,13 @@
 
             //sql para inserir no banco
             $insertSql = "INSERT INTO
-                            tbl_promocao (titulo, descricao, status, img_promo, precisa_cadastro)
+                            tbl_promocao (titulo, descricao, status, img_promo, precisa_cadastro, status_home)
                          VALUES
-                            ('".$promocoes->getTitulo()."', '".$promocoes->getDescricao()."', '".$promocoes->getStatus()."', '".$promocoes->getImagem()."', '".$promocoes->getPrecisaCadastro()."')";
+                            ('".$promocoes->getTitulo()."', '".$promocoes->getDescricao()."', 
+                            '".$promocoes->getStatus()."', '".$promocoes->getImagem()."', 
+                            '".$promocoes->getPrecisaCadastro()."', '".$promocoes->getStatusHome."')";
 
             $conn = $this->conexao->connectDatabase();
-
             
 
             //enviando pro banco
@@ -65,7 +66,8 @@
                             SET titulo = '".$promocoes->getTitulo()."',
                             descricao = '".$promocoes->getDescricao()."',
                             status = '".$promocoes->getStatus()."',
-                            precisa_cadastro = '".$promocoes->getPrecisaCadastro()."'
+                            precisa_cadastro = '".$promocoes->getPrecisaCadastro()."',
+                            status_home = '".$promocoes->getStatusHome()."'
                             WHERE id_promocao=".$idPromocoes;
 
                 $conn = $this->conexao->connectDatabase();
@@ -86,7 +88,9 @@
                             descricao = '".$promocoes->getDescricao()."',
                             status = '".$promocoes->getStatus()."',
                             img_promo = '".$promocoes->getImagem()."',
-                            precisa_cadastro = 1
+                            precisa_cadastro = '".$promocoes->getPrecisaCadastro()."',
+                            status_home = '".$promocoes->getStatusHome()."'
+
                             WHERE id_promocao=".$idPromocoes;
 
                 $conn = $this->conexao->connectDatabase();
@@ -128,6 +132,7 @@
                 $promocoes[$cont]->setImagem($rsPromocoes['img_promo']);
                 $promocoes[$cont]->setPrecisaCadastro($rsPromocoes['precisa_cadastro']);
                 $promocoes[$cont]->setStatus($rsPromocoes['status']);
+                $promocoes[$cont]->setStatusHome($rsPromocoes['status_home']);
                 //incrementando o cont
                 $cont += 1;
 
@@ -157,6 +162,7 @@
               $promocao->setImagem($rsPromocao['img_promo']);
               $promocao->setPrecisaCadastro($rsPromocao['precisa_cadastro']);
               $promocao->setStatus($rsPromocao['status']);
+              $promocao->setStatusHome($rsPromocao['status_home']);
           }
           //Fechar a conexão com o BD
           $this->conexao->closeDatabase();

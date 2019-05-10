@@ -54,15 +54,23 @@ $path_url = $_SESSION['path_url'];
 
       // Loop para colocar todos os registros no result set
       while ($cont < count($rsPromocoes)) {
-        
+
         ?>
         <tr>
           <td><?= $rsPromocoes[$cont]->getTitulo()?></td>
-          <td><?= $rsPromocoes[$cont]->getDescricao()?></td>          
-          <td>
+          <td><?= $rsPromocoes[$cont]->getDescricao()?></td>
+          <td align="center">
             <img class="img_size" width="70" height="70" src="<?= "$path_url/cms/view/img/temp/".$rsPromocoes[$cont]->getImagem() ?>">
           </td>
-          <td><?= $rsPromocoes[$cont]->getPrecisaCadastro()?></td>
+          <td>
+            <?php
+              if($rsPromocoes[$cont]->getPrecisaCadastro() == 0){
+                echo "Não";
+              } else{
+                echo "Sim";
+              }
+             ?>
+          </td>
           <td id="td_imagens">
             <a href="#" onclick="router('promocao', 'buscar', <?= $rsPromocoes[$cont]->getIdPromocao() ?>);">
               <img src="<?= "$path_url/cms/view/img/editar.png" ?>" alt="editar" title="Editar">
@@ -70,7 +78,6 @@ $path_url = $_SESSION['path_url'];
             <a href="#" onclick="router('promocao', 'excluir', <?= $rsPromocoes[$cont]->getIdPromocao() ?>);">
               <img src="<?= "$path_url/cms/view/img/deletar.png" ?>" alt="excluir" title="Excluir">
             </a>
-
 
           </td>
         </tr>
